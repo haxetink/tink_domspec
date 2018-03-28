@@ -1,5 +1,5 @@
 {
     "haxe.displayConfigurations": [
-        ["tests.hxml"]
+        ["tests.hxml", "-lib", "tink_domspec", "-lib", "travix", "-js", "test.js"]
     ]
 }
