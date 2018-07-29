@@ -25,6 +25,7 @@ typedef Tags = {
     var h3:GlobalAttr;
     var h4:GlobalAttr;
     var h5:GlobalAttr;
+    var h6:GlobalAttr;
     var strong:GlobalAttr;
     var em:GlobalAttr;
     var span:GlobalAttr;
@@ -39,7 +40,6 @@ typedef Tags = {
     var li:GlobalAttr;
     var label:LabelAttr;
     var button:InputAttr;
-    var textarea:TextAreaAttr;
     var pre:GlobalAttr;
     var canvas:CanvasAttr;
     var audio:AudioAttr;
@@ -50,6 +50,7 @@ typedef Tags = {
     var option:OptionAttr;
   }
   var opaque:{
+    var textarea:TextAreaAttr;//right?
     var script:ScriptAttr;
     var style:StyleAttr;
   }

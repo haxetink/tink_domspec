@@ -4,7 +4,7 @@ package tink.domspec;
 import js.html.*;
 
 @:forward
-abstract EventFrom<Elt:Element, Evt:Event>(Evt) {
+abstract EventFrom<Elt, Evt:Event>(Evt) {
 
   public var currentTarget(get, never):Elt;
     inline function get_currentTarget():Elt
