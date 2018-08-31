@@ -18,7 +18,7 @@ typedef TagInfo = {
 }
 
 class Macro {
-  static public var tags(default, null):Map<String, TagInfo> = {
+  static public var tags(default, null):Map<String, TagInfo> = {//TODO: make this readonly
     var ret = new Map();
     for (group in haxe.macro.Context.getType('tink.domspec.Tags').getFields().sure()) {
       var kind:TagKind = cast group.name;
