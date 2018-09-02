@@ -14,5 +14,7 @@
 	"releasenote": "Initial haxelib release.",
 	"version": "0.1.0",
 	"url": "https://github.com/haxetink/tink_domspec/",
-	"dependencies": {}
+	"dependencies": {
+		"tink_macro": ""
+	}
 }
