@@ -14,8 +14,8 @@ abstract EventFrom<Elt, Evt:Event>(Evt) {
     inline function get_target():Element
       return cast this.target;
 
-  public var element(get, never):Elt;
-    inline function get_element():Elt
+  public var src(get, never):Elt;
+    inline function get_src():Elt
       return currentTarget;
 }
 #else
