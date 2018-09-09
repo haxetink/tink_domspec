@@ -21,5 +21,8 @@ abstract ClassName(String) to String {
   @:from static function ofString(s:String):ClassName
     return new ClassName(s.trim());
 
+  @:from static function ofDynamicAccess(parts:haxe.DynamicAccess<Bool>)
+    return new ClassName(ofArray([for (c in parts.keys()) if (parts[c]) ofString(c)]));
+
   //TODO: add macro @:from to avoid ofString overhead for constant strings
 }
