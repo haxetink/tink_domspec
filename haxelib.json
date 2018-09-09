@@ -11,8 +11,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Add missing dependencies.",
-	"version": "0.1.1",
+	"releasenote": "Allow creating classes from objects.",
+	"version": "0.1.2",
 	"url": "https://github.com/haxetink/tink_domspec/",
 	"dependencies": {
 		"tink_macro": ""
