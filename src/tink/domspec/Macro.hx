@@ -15,6 +15,7 @@ typedef TagInfo = {
   var kind(default, never):TagKind;
   var attr(default, never):ComplexType;
   var dom(default, never):Type;
+  var pos(default, never):Position;
 }
 
 class Macro {
@@ -34,6 +35,7 @@ class Macro {
             ret[f.name] = {
               kind: kind,
               attr: 'tink.domspec.Attributes.$name'.asComplexType(),
+              pos: f.pos,
               dom: {
                 var ct = html.asComplexType();
                 (macro @:pos(f.pos) (null:$ct)).typeof().sure();
