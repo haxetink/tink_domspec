@@ -41,14 +41,19 @@ typedef TableCellAttr = {> GlobalAttr,
   @:optional var scope(default, never):String;
   @:optional var sorted(default, never):String;
 }
-
+@:enum abstract InputAutoComplete(String) {
+  var On = "on";
+  var Off = "off";
+  @:from static inline function ofBool(b:Bool)
+    return if (b) On else Off;
+}
 
 typedef InputAttr = {>GlobalAttr,
   @:optional var checked(default, never):Bool;
   @:optional var disabled(default, never):Bool;
   @:optional var required(default, never):Bool;
   @:optional var autofocus(default, never):Bool;
-  @:optional var autocomplete(default, never):Bool;
+  @:optional var autocomplete(default, never):InputAutoComplete;
   @:optional var value(default, never):String;
   @:html('value') @:optional var defaultValue(default, never):String;
   @:optional var type(default, never):String;
