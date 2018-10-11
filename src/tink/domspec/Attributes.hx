@@ -56,7 +56,7 @@ typedef InputAttr = {>GlobalAttr,
   @:optional var max(default, never):String;
   @:optional var min(default, never):String;
   @:optional var step(default, never):String;
-  @:optional var maxlength(default, never):Int;
+  @:optional var maxLength(default, never):Int;
   @:optional var pattern(default, never):String;
   @:optional var accept(default, never):String;
 }
