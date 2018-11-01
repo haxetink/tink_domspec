@@ -246,6 +246,7 @@ typedef Style = {
   @:optional var pitch(default, never):String;
   @:optional var pitchRange(default, never):String;
   @:optional var playDuring(default, never):String;
+  @:optional var pointerEvents(default, never):String;
   @:optional var position(default, never):String;
   @:optional var presentationLevel(default, never):String;
   @:optional var quotes(default, never):String;
