@@ -98,24 +98,22 @@ typedef ImageAttr = {>GlobalAttr,
   @:optional var height(default, never):Int;
 }
 
-typedef AudioAttr = {>GlobalAttr,
+private typedef MediaAttr = {>GlobalAttr,
   @:optional var src(default, never):String;
   @:optional var autoplay(default, never):Bool;
   @:optional var controls(default, never):Bool;
   @:optional var loop(default, never):Bool;
   @:optional var muted(default, never):Bool;
   @:optional var preload(default, never):String;
+  @:optional var volume(default, never):Float;  
+}
+  
+typedef AudioAttr = {>MediaAttr,
 }
 
-typedef VideoAttr = {>GlobalAttr,
-  @:optional var src(default, never):String;
-  @:optional var autoplay(default, never):Bool;
-  @:optional var controls(default, never):Bool;
+typedef VideoAttr = {>MediaAttr,
   @:optional var height(default, never):Int;
-  @:optional var loop(default, never):Bool;
-  @:optional var muted(default, never):Bool;
   @:optional var poster(default, never):String;
-  @:optional var preload(default, never):String;
   @:optional var width(default, never):Int;
 }
 
