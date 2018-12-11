@@ -39,7 +39,7 @@ typedef Tags = {
     var ol:GlobalAttr;
     var li:GlobalAttr;
     var label:LabelAttr;
-    var button:InputAttr;
+    var button:ButtonAttr;
     var pre:GlobalAttr;
     var canvas:CanvasAttr;
     var audio:AudioAttr;

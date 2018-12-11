@@ -61,6 +61,13 @@ typedef InputAttr = {>GlobalAttr,
   @:optional var accept(default, never):String;
 }
 
+typedef ButtonAttr = {>GlobalAttr,
+  @:optional var disabled(default, never):Bool;
+  @:optional var autofocus(default, never):Bool;
+  @:optional var type(default, never):String;
+  @:optional var name(default, never):String;
+}
+
 typedef TextAreaAttr = {>GlobalAttr,
   @:optional var autofocus(default, never):Bool;
   @:optional var cols(default, never):Int;
