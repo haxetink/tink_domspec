@@ -47,5 +47,20 @@ class Macro {
     }
     ret;
   }
+  
+  static function processStyle(e:Expr):Expr 
+    return switch e {
+      case { expr: EObjectDecl(_) }: e;
+      default: 
+        switch e.typeof().sure() {
+          case TInst(_.get() => { pack: [], name: 'String' }, _): 
+            macro @:pos(e.pos) tink.domspec.Style.CSSParser.parseString($e);//TODO: try some compile time parsing
+          default: e;
+        }
+    }
+}
+#else
+class Macro {
+  static macro public function processStyle(e);
 }
 #end

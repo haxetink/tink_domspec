@@ -1,5 +1,8 @@
 package tink.domspec;
 
+@:fromHxx(
+  transform = tink.domspec.Macro.processStyle
+)
 typedef Style = {
   @:optional var alignContent(default, never):String;
   @:optional var alignItems(default, never):String;
@@ -331,4 +334,25 @@ typedef Style = {
   @:optional var wrapThrough(default, never):String;
   @:optional var writingMode(default, never):String;
   @:optional var zIndex(default, never):String;
+}
+
+class CSSParser {
+  #if js
+  static var style = js.Browser.document.createElement('div').style;
+  static public function parseString(s:String):Style
+    return {};
+  #else
+  @:require(js)
+  static public function parseString(s:String):Style {
+    style.cssText = s;
+    var ret:Style = {};
+    {
+      var ret:haxe.DynamicAccess<String> = ret;
+      for (name in style) {
+        ret[name] = style.getPropertyValue(name);
+      }
+    }  
+    return ret;
+  }
+  #end
 }
