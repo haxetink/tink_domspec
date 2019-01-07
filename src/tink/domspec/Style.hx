@@ -339,10 +339,6 @@ typedef Style = {
 class CSSParser {
   #if js
   static var style = js.Browser.document.createElement('div').style;
-  static public function parseString(s:String):Style
-    return {};
-  #else
-  @:require(js)
   static public function parseString(s:String):Style {
     style.cssText = s;
     var ret:Style = {};
@@ -354,5 +350,9 @@ class CSSParser {
     }  
     return ret;
   }
+  #else
+  @:require(js)
+  static public function parseString(s:String):Style 
+    return {};
   #end
 }
