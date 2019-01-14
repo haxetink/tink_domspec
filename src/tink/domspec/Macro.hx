@@ -50,6 +50,7 @@ class Macro {
   
   static function processStyle(e:Expr):Expr 
     return switch e {
+      case macro @style $e: processStyle(e);
       case { expr: EObjectDecl(_) }: e;
       default: 
         switch e.typeof().sure() {

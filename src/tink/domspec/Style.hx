@@ -1,7 +1,7 @@
 package tink.domspec;
 
 @:fromHxx(
-  transform = tink.domspec.Macro.processStyle
+  transform = tink.domspec.Macro.processStyle(@style _)
 )
 typedef Style = {
   @:optional var alignContent(default, never):String;
