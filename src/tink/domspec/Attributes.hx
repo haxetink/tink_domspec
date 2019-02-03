@@ -49,6 +49,7 @@ typedef InputAttr = {>GlobalAttr,
   @:optional var autofocus(default, never):Bool;
   @:optional var autocomplete(default, never):String;
   @:optional var value(default, never):String;
+  @:optional var readOnly(default, never):Bool;  
   @:html('value') @:optional var defaultValue(default, never):String;
   @:optional var type(default, never):String;
   @:optional var name(default, never):String;
@@ -77,7 +78,7 @@ typedef TextAreaAttr = {>GlobalAttr,
   @:optional var maxlength(default, never):Int;
   @:optional var name(default, never):String;
   @:optional var placeholder(default, never):String;
-  @:optional var readonly(default, never):Bool;
+  @:optional var readOnly(default, never):Bool;
   @:optional var required(default, never):Bool;
   @:optional var rows(default, never):Int;
   @:optional var wrap(default, never):String;
