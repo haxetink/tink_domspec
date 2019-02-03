@@ -11,8 +11,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"releasenote": "Allow creating classes from objects.",
-	"version": "0.1.2",
+	"releasenote": "Add/correct a few attributes.",
+	"version": "0.1.3",
 	"url": "https://github.com/haxetink/tink_domspec/",
 	"dependencies": {
 		"tink_macro": ""
