@@ -81,6 +81,8 @@ typedef TextAreaAttr = {>GlobalAttr,
   @:optional var readOnly(default, never):Bool;
   @:optional var required(default, never):Bool;
   @:optional var rows(default, never):Int;
+  @:optional var value(default, never):String;
+  @:optional var defaultValue(default, never):String;
   @:optional var wrap(default, never):String;
 }
 
