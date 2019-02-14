@@ -48,6 +48,9 @@ typedef Tags = {
     var fieldset:FieldSetAttr;
     var select:SelectAttr;
     var option:OptionAttr;
+    var dl:GlobalAttr;
+    var dt:GlobalAttr;
+    var dd:GlobalAttr;
   }
   var opaque:{
     var textarea:TextAreaAttr;//right?
