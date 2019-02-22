@@ -19,33 +19,36 @@ typedef TagInfo = {
 }
 
 class Macro {
-  static public var tags(default, null):Map<String, TagInfo> = {//TODO: make this readonly
-    var ret = new Map();
-    for (group in haxe.macro.Context.getType('tink.domspec.Tags').getFields().sure()) {
-      var kind:TagKind = cast group.name;
-      for (f in group.type.getFields().sure()) {
-        switch f.type {
-          case TType(_.get() => { module: 'tink.domspec.Attributes', name: name }, _): 
-            var html = 'js.html.' + (switch name.split('Attr') {
-              case ['Global', '']: '';
-              case [name, '']: name;
-              default: throw 'assert';
-            }) + 'Element';
+  static public var tags(get, null):Map<String, TagInfo>;//TODO: make this readonly
+  static function get_tags() {
+    if (tags == null) {
+      tags = new Map();
+      for (group in haxe.macro.Context.getType('tink.domspec.Tags').getFields().sure()) {
+        var kind:TagKind = cast group.name;
+        for (f in group.type.getFields().sure()) {
+          switch f.type {
+            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name }, _): 
+              var html = 'js.html.' + (switch name.split('Attr') {
+                case ['Global', '']: '';
+                case [name, '']: name;
+                default: throw 'assert';
+              }) + 'Element';
 
-            ret[f.name] = {
-              kind: kind,
-              attr: 'tink.domspec.Attributes.$name'.asComplexType(),
-              pos: f.pos,
-              dom: {
-                var ct = html.asComplexType();
-                (macro @:pos(f.pos) (null:$ct)).typeof().sure();
+              tags[f.name] = {
+                kind: kind,
+                attr: 'tink.domspec.Attributes.$name'.asComplexType(),
+                pos: f.pos,
+                dom: {
+                  var ct = html.asComplexType();
+                  (macro @:pos(f.pos) (null:$ct)).typeof().sure();
+                }
               }
-            }
-          default: throw 'assert';
+            default: throw 'assert';
+          }
         }
       }
     }
-    ret;
+    return tags;
   }
   
   static function processStyle(e:Expr):Expr 
