@@ -60,6 +60,7 @@ typedef InputAttr = {>GlobalAttr,
   @:optional var maxLength(default, never):Int;
   @:optional var pattern(default, never):String;
   @:optional var accept(default, never):String;
+  @:optional var multiple(default, never):Bool;
 }
 
 typedef ButtonAttr = {>GlobalAttr,
