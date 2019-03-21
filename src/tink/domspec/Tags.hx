@@ -31,6 +31,8 @@ typedef Tags = {
     var span:GlobalAttr;
     var a:AnchorAttr;
     var p:GlobalAttr;
+    var ins:GlobalAttr;
+    var del:GlobalAttr;
     var i:GlobalAttr;
     var b:GlobalAttr;
     var small:GlobalAttr;
