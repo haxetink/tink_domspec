@@ -336,6 +336,16 @@ typedef Style = {
   @:optional var zIndex(default, never):String;
 }
 
+@:fromHxx(
+  transform = tink.domspec.Macro.processStyle(@style _)
+)
+typedef SvgStyle = {
+  @:optional var fill(default, never):String;
+  @:optional var stroke(default, never):String;
+  @:optional var strokeWidth(default, never):String;
+  @:optional var fillRule(default, never):String;
+}
+
 class CSSParser {
   #if js
   static var style = js.Browser.document.createElement('div').style;

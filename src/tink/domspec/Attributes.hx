@@ -1,6 +1,7 @@
 package tink.domspec;
 
-typedef GlobalAttr = {
+import tink.domspec.Style;
+typedef GlobalAttr<Style> = {
   @:html('class') @:optional var className(default, never):ClassName;
   @:optional var id(default, never):String;
   @:optional var title(default, never):String;
@@ -15,25 +16,25 @@ typedef GlobalAttr = {
   @:optional var style(default, never):Style;
 }
 
-typedef FieldSetAttr = {>GlobalAttr, 
+typedef FieldSetAttr = {>GlobalAttr<Style>, 
   @:optional var disabled(default, never):Bool; 
   @:optional var name(default, never):String; 
 }
 
-typedef ObjectAttr = {>GlobalAttr, 
+typedef ObjectAttr = {>GlobalAttr<Style>, 
   @:optional var type(default, never):String;
   @:optional var data(default, never):String;
   @:optional var width(default, never):Int;
   @:optional var height(default, never):Int;  
 }
 
-typedef ParamAttr = {>GlobalAttr, 
+typedef ParamAttr = {>GlobalAttr<Style>, 
   var name(default, never):String;
   var value(default, never):String;
 }
 
 
-typedef TableCellAttr = {> GlobalAttr,
+typedef TableCellAttr = {>GlobalAttr<Style>,
   @:optional var abbr(default, never):String;
   @:optional var colSpan(default, never):Int;
   @:optional var headers(default, never):String;
@@ -42,7 +43,7 @@ typedef TableCellAttr = {> GlobalAttr,
   @:optional var sorted(default, never):String;
 }
 
-typedef InputAttr = {>GlobalAttr,
+typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var checked(default, never):Bool;
   @:optional var disabled(default, never):Bool;
   @:optional var required(default, never):Bool;
@@ -63,14 +64,14 @@ typedef InputAttr = {>GlobalAttr,
   @:optional var multiple(default, never):Bool;
 }
 
-typedef ButtonAttr = {>GlobalAttr,
+typedef ButtonAttr = {>GlobalAttr<Style>,
   @:optional var disabled(default, never):Bool;
   @:optional var autofocus(default, never):Bool;
   @:optional var type(default, never):String;
   @:optional var name(default, never):String;
 }
 
-typedef TextAreaAttr = {>GlobalAttr,
+typedef TextAreaAttr = {>GlobalAttr<Style>,
   @:optional var autofocus(default, never):Bool;
   @:optional var cols(default, never):Int;
   @:optional var dirname(default, never):String;
@@ -87,7 +88,7 @@ typedef TextAreaAttr = {>GlobalAttr,
   @:optional var wrap(default, never):String;
 }
 
-typedef IFrameAttr = {>GlobalAttr,
+typedef IFrameAttr = {>GlobalAttr<Style>,
   @:optional var sandbox(default, never):String; 
   @:optional var width(default, never):Int; 
   @:optional var height(default, never):Int; 
@@ -103,13 +104,13 @@ typedef IFrameAttr = {>GlobalAttr,
   var Auto = "auto";
 }
 
-typedef ImageAttr = {>GlobalAttr,
+typedef ImageAttr = {>GlobalAttr<Style>,
   @:optional var src(default, never):String;
   @:optional var width(default, never):Int;
   @:optional var height(default, never):Int;
 }
 
-private typedef MediaAttr = {>GlobalAttr,
+private typedef MediaAttr = {>GlobalAttr<Style>,
   @:optional var src(default, never):String;
   @:optional var autoplay(default, never):Bool;
   @:optional var controls(default, never):Bool;
@@ -128,7 +129,7 @@ typedef VideoAttr = {>MediaAttr,
   @:optional var width(default, never):Int;
 }
 
-typedef SourceAttr = {>GlobalAttr,
+typedef SourceAttr = {>GlobalAttr<Style>,
   @:optional var src(default, never):String;
   @:optional var srcset(default, never):String;
   @:optional var media(default, never):String;
@@ -136,11 +137,11 @@ typedef SourceAttr = {>GlobalAttr,
   @:optional var type(default, never):String;
 }
 
-typedef LabelAttr = {>GlobalAttr,
+typedef LabelAttr = {>GlobalAttr<Style>,
   @:html('for') @:optional var htmlFor(default, never):String;
 }
 
-typedef SelectAttr = {>GlobalAttr,
+typedef SelectAttr = {>GlobalAttr<Style>,
   @:optional var autofocus(default, never):Bool;
   @:optional var disabled(default, never):Bool;
   @:optional var multiple(default, never):Bool;
@@ -149,18 +150,18 @@ typedef SelectAttr = {>GlobalAttr,
   @:optional var size(default, never):Int;
 }
 
-typedef FormAttr = {>GlobalAttr,
+typedef FormAttr = {>GlobalAttr<Style>,
   @:optional var method(default, never):String;
   @:optional var action(default, never):String;
 }
 
-typedef AnchorAttr = {>GlobalAttr,
+typedef AnchorAttr = {>GlobalAttr<Style>,
   @:optional var href(default, never):String;
   @:optional var target(default, never):String;
   @:optional var type(default, never):String;
 }
 
-typedef OptionAttr = {>GlobalAttr,
+typedef OptionAttr = {>GlobalAttr<Style>,
   @:optional var disabled:Bool;
   @:optional var label(default, never):String;
   @:jsOnly @:optional var defaultSelected(default, never):Bool;
@@ -170,7 +171,7 @@ typedef OptionAttr = {>GlobalAttr,
   @:optional var index(default, never):Int;
 }
 
-typedef ScriptAttr = {>GlobalAttr,
+typedef ScriptAttr = {>GlobalAttr<Style>,
   @:optional var async(default, never):Bool;
   @:optional var charset(default, never):String;
   @:optional var defer(default, never):Bool;
@@ -178,13 +179,13 @@ typedef ScriptAttr = {>GlobalAttr,
   @:optional var type(default, never):String;
 }
 
-typedef StyleAttr = {>GlobalAttr,
+typedef StyleAttr = {>GlobalAttr<Style>,
   @:optional var type(default, never):String;
   @:optional var media(default, never):String;
   @:optional var nonce(default, never):String;
 }
 
-typedef CanvasAttr = {>GlobalAttr,
+typedef CanvasAttr = {>GlobalAttr<Style>,
   @:optional var width(default, never):String;
   @:optional var height(default, never):String;
 }
@@ -209,4 +210,14 @@ typedef EmbedAttr = {
   var width(default, never):Int;
   var src(default, never):String;
   var typed(default, never):String;
+}
+
+typedef SvgAttr = {>GlobalAttr<Style>,
+  @:optional var width(default, never):String;
+  @:optional var height(default, never):String;
+}
+
+typedef PolygonAttr = {>GlobalAttr<SvgStyle>,
+	var points(get, never):String;
+	@:optional var transform(get, never):String;
 }
