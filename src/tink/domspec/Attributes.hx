@@ -212,12 +212,31 @@ typedef EmbedAttr = {
   var typed(default, never):String;
 }
 
+// svg attr reference: https://github.com/dumistoklus/svg-xsd-schema/blob/master/svg.xsd
 typedef SvgAttr = {>GlobalAttr<Style>,
   @:optional var width(default, never):String;
   @:optional var height(default, never):String;
 }
 
-typedef PolygonAttr = {>GlobalAttr<SvgStyle>,
-	var points(get, never):String;
-	@:optional var transform(get, never):String;
+
+typedef PathAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.PathAttr,
+}
+typedef PolygonAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.PolygonAttr,
+}
+
+typedef RectAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.RectAttr,
+}
+typedef CircleAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.CircleAttr,
+}
+typedef EllipseAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.EllipseAttr,
 }
