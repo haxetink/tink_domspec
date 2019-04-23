@@ -339,12 +339,7 @@ typedef Style = {
 @:fromHxx(
   transform = tink.domspec.Macro.processStyle(@style _)
 )
-typedef SvgStyle = {
-  @:optional var fill(default, never):String;
-  @:optional var stroke(default, never):String;
-  @:optional var strokeWidth(default, never):String;
-  @:optional var fillRule(default, never):String;
-}
+typedef SvgStyle = tink.svgspec.PresentationAttributes; // TODO: is this correct?
 
 class CSSParser {
   #if js
