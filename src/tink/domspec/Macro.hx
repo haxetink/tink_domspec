@@ -27,7 +27,7 @@ class Macro {
         var kind:TagKind = cast group.name;
         for (f in group.type.getFields().sure()) {
           switch f.type {
-            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name, params: params }, _): 
+            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name}, params): 
               var html = 
                 switch f.meta.extract(':element') {
                   case []:
@@ -44,7 +44,7 @@ class Macro {
               
               tags[f.name] = {
                 kind: kind,
-                attr: 'tink.domspec.Attributes.$name'.asComplexType(params.map(Types.toTypeParam)),
+                attr: 'tink.domspec.Attributes.$name'.asComplexType(params.map(function(type) return TPType(type.toComplex()))),
                 pos: f.pos,
                 dom: {
                   var ct = html.asComplexType();
