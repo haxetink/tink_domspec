@@ -3,7 +3,7 @@ package tink.domspec;
 import js.html.*;
 using tink.CoreApi;
 
-typedef Events<Target:Element> = {
+typedef Events<Target:DOMElement> = {
   @:optional var onwheel:Callback<EventFrom<Target, WheelEvent>>;
   
   @:optional var oncopy:Callback<EventFrom<Target, ClipboardEvent>>;

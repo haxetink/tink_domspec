@@ -336,6 +336,11 @@ typedef Style = {
   @:optional var zIndex(default, never):String;
 }
 
+@:fromHxx(
+  transform = tink.domspec.Macro.processStyle(@style _)
+)
+typedef SvgStyle = tink.svgspec.PresentationAttributes; // TODO: is this correct?
+
 class CSSParser {
   #if js
   static var style = js.Browser.document.createElement('div').style;

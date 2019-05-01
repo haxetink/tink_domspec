@@ -27,16 +27,24 @@ class Macro {
         var kind:TagKind = cast group.name;
         for (f in group.type.getFields().sure()) {
           switch f.type {
-            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name }, _): 
-              var html = 'js.html.' + (switch name.split('Attr') {
-                case ['Global', '']: '';
-                case [name, '']: name;
-                default: throw 'assert';
-              }) + 'Element';
-
+            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name}, params): 
+              var html = 
+                switch f.meta.extract(':element') {
+                  case []:
+                    'js.html.' + (switch name.split('Attr') {
+                      case ['Global', '']: '';
+                      case [name, '']: name;
+                      default: throw 'assert';
+                    }) + 'Element';
+                  case [{params: [path]}]:
+                    path.toString();
+                  case _:
+                    f.pos.error('Only support single @:element meta with a single parameter');
+                }
+              
               tags[f.name] = {
                 kind: kind,
-                attr: 'tink.domspec.Attributes.$name'.asComplexType(),
+                attr: 'tink.domspec.Attributes.$name'.asComplexType(params.map(function(type) return TPType(type.toComplex()))),
                 pos: f.pos,
                 dom: {
                   var ct = html.asComplexType();

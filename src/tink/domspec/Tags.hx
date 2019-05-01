@@ -6,43 +6,43 @@ typedef Tags = {
   var normal:{  
     var iframe:IFrameAttr;
     var object:ObjectAttr;
-    var div:GlobalAttr;
-    var aside:GlobalAttr;
-    var section:GlobalAttr;
-    var header:GlobalAttr;
-    var footer:GlobalAttr;
-    var main:GlobalAttr;
-    var nav:GlobalAttr;
-    var table:GlobalAttr;
-    var thead:GlobalAttr;
-    var tbody:GlobalAttr;
-    var tfoot:GlobalAttr;
-    var tr:GlobalAttr;
+    var div:GlobalAttr<Style>;
+    var aside:GlobalAttr<Style>;
+    var section:GlobalAttr<Style>;
+    var header:GlobalAttr<Style>;
+    var footer:GlobalAttr<Style>;
+    var main:GlobalAttr<Style>;
+    var nav:GlobalAttr<Style>;
+    var table:GlobalAttr<Style>;
+    var thead:GlobalAttr<Style>;
+    var tbody:GlobalAttr<Style>;
+    var tfoot:GlobalAttr<Style>;
+    var tr:GlobalAttr<Style>;
     var td:TableCellAttr;
     var th:TableCellAttr;
-    var h1:GlobalAttr;
-    var h2:GlobalAttr;
-    var h3:GlobalAttr;
-    var h4:GlobalAttr;
-    var h5:GlobalAttr;
-    var h6:GlobalAttr;
-    var strong:GlobalAttr;
-    var em:GlobalAttr;
-    var span:GlobalAttr;
+    var h1:GlobalAttr<Style>;
+    var h2:GlobalAttr<Style>;
+    var h3:GlobalAttr<Style>;
+    var h4:GlobalAttr<Style>;
+    var h5:GlobalAttr<Style>;
+    var h6:GlobalAttr<Style>;
+    var strong:GlobalAttr<Style>;
+    var em:GlobalAttr<Style>;
+    var span:GlobalAttr<Style>;
     var a:AnchorAttr;
-    var p:GlobalAttr;
-    var ins:GlobalAttr;
-    var del:GlobalAttr;
-    var i:GlobalAttr;
-    var b:GlobalAttr;
-    var small:GlobalAttr;
-    var menu:GlobalAttr;
-    var ul:GlobalAttr;
-    var ol:GlobalAttr;
-    var li:GlobalAttr;
+    var p:GlobalAttr<Style>;
+    var ins:GlobalAttr<Style>;
+    var del:GlobalAttr<Style>;
+    var i:GlobalAttr<Style>;
+    var b:GlobalAttr<Style>;
+    var small:GlobalAttr<Style>;
+    var menu:GlobalAttr<Style>;
+    var ul:GlobalAttr<Style>;
+    var ol:GlobalAttr<Style>;
+    var li:GlobalAttr<Style>;
     var label:LabelAttr;
     var button:ButtonAttr;
-    var pre:GlobalAttr;
+    var pre:GlobalAttr<Style>;
     var canvas:CanvasAttr;
     var audio:AudioAttr;
     var video:VideoAttr;
@@ -50,9 +50,15 @@ typedef Tags = {
     var fieldset:FieldSetAttr;
     var select:SelectAttr;
     var option:OptionAttr;
-    var dl:GlobalAttr;
-    var dt:GlobalAttr;
-    var dd:GlobalAttr;
+    var dl:GlobalAttr<Style>;
+    var dt:GlobalAttr<Style>;
+    var dd:GlobalAttr<Style>;
+    @:element(js.html.svg.SVGElement) var svg:SvgAttr;
+    @:element(js.html.svg.PathElement) var path:PathAttr;
+    @:element(js.html.svg.PolygonElement) var polygon:PolygonAttr;
+    @:element(js.html.svg.CircleElement) var circle:CircleAttr;
+    @:element(js.html.svg.RectElement) var rect:RectAttr;
+    @:element(js.html.svg.EllipseElement) var ellipse:EllipseAttr;
   }
   var opaque:{
     var textarea:TextAreaAttr;//right?
@@ -60,19 +66,19 @@ typedef Tags = {
     var style:StyleAttr;
   }
   var void:{
-    // var area:GlobalAttr; //a bit hard to make type safe
-    // var base:GlobalAttr; //not needed, I hope
-    var br:GlobalAttr;
-    // var col:GlobalAttr; //is more of an HTML4 thing
+    // var area:GlobalAttr<Style>; //a bit hard to make type safe
+    // var base:GlobalAttr<Style>; //not needed, I hope
+    var br:GlobalAttr<Style>;
+    // var col:GlobalAttr<Style>; //is more of an HTML4 thing
     var embed:EmbedAttr;
-    var hr:GlobalAttr;
+    var hr:GlobalAttr<Style>;
     var img:ImageAttr;
     var input:InputAttr;
-    // var link:GlobalAttr; //have to actually read the spec
-    // var meta:GlobalAttr; //have to actually read the spec
+    // var link:GlobalAttr<Style>; //have to actually read the spec
+    // var meta:GlobalAttr<Style>; //have to actually read the spec
     var param:ParamAttr;
     var source:SourceAttr;
     var track:TrackAttr;
-    var wbr:GlobalAttr;
+    var wbr:GlobalAttr<Style>;
   }
 }
