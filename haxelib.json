@@ -3,7 +3,7 @@
 	"classPath": "src",
 	"dependencies": {
 		"tink_macro": "",
-		"tink_svgspec": ""
+		"tink_svgspec": "gh:haxetink/tink_svgspec"
 	},
 	"url": "https://github.com/haxetink/tink_domspec/",
 	"contributors": [
