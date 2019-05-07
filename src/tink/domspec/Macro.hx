@@ -11,11 +11,24 @@ using tink.MacroApi;
   var OPAQUE = 'opaque';
 }
 
-typedef TagInfo = {
-  var kind(default, never):TagKind;
-  var attr(default, never):ComplexType;
-  var dom(default, never):Type;
-  var pos(default, never):Position;
+class TagInfo {
+  public var kind(default, null):TagKind;
+  public var attr(default, null):ComplexType;
+  public var pos(default, null):Position;
+  public var domCt(default, null):ComplexType;
+  public var dom(get, null):Type;
+    function get_dom() 
+      return switch dom {
+        case null:
+          dom = (macro @:pos(pos) (null:$domCt)).typeof().sure();    
+        case v: v;
+      }
+  public function new(args) {
+    this.kind = args.kind;
+    this.attr = args.attr;
+    this.pos = args.pos;
+    this.domCt = args.domCt;
+  }
 }
 
 class Macro {
@@ -28,7 +41,7 @@ class Macro {
         for (f in group.type.getFields().sure()) {
           switch f.type {
             case TType(_.get() => { module: 'tink.domspec.Attributes', name: name}, params): 
-              var html = 
+              var typeId = 
                 switch f.meta.extract(':element') {
                   case []:
                     'js.html.' + (switch name.split('Attr') {
@@ -42,15 +55,12 @@ class Macro {
                     f.pos.error('Only support single @:element meta with a single parameter');
                 }
               
-              tags[f.name] = {
+              tags[f.name] = new TagInfo({
                 kind: kind,
                 attr: 'tink.domspec.Attributes.$name'.asComplexType(params.map(function(type) return TPType(type.toComplex()))),
                 pos: f.pos,
-                dom: {
-                  var ct = html.asComplexType();
-                  (macro @:pos(f.pos) (null:$ct)).typeof().sure();
-                }
-              }
+                domCt: typeId.asComplexType(),
+              });
             default: throw 'assert';
           }
         }
