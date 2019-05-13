@@ -43,6 +43,7 @@ typedef Tags = {
     var label:LabelAttr;
     var button:ButtonAttr;
     var pre:GlobalAttr<Style>;
+    var picture:GlobalAttr<Style>;
     var canvas:CanvasAttr;
     var audio:AudioAttr;
     var video:VideoAttr;

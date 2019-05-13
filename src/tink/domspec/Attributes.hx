@@ -108,6 +108,9 @@ typedef ImageAttr = {>GlobalAttr<Style>,
   @:optional var src(default, never):String;
   @:optional var width(default, never):Int;
   @:optional var height(default, never):Int;
+  @:optional var alt(default, never):String;
+  @:optional var srcset(default, never):String;
+  @:optional var sizes(default, never):String;
 }
 
 private typedef MediaAttr = {>GlobalAttr<Style>,
