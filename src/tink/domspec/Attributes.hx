@@ -174,6 +174,52 @@ typedef OptionAttr = {>GlobalAttr<Style>,
   @:optional var index(default, never):Int;
 }
 
+typedef MetaAttr = {> GlobalAttr<Style>,
+  @:optional var content(default, never):String;
+  @:optional var name(default, never):String;
+  @:optional var charset(default, never):String;
+  @:optional var httpEquiv(default, never):MetaHttpEquiv;
+}
+
+@:enum abstract MetaHttpEquiv(String) to String from String {
+  var ContentType = "content-type";
+  var DefaultStyle = "default-style";
+  var Refresh = "refresh";
+}
+
+typedef LinkAttr = {>GlobalAttr<Style>,
+  var rel(default, never):LinkRel;
+  @:optional var crossorigin(default, never):LinkCrossOrigin;
+  @:optional var href(default, never):String;
+  @:optional var hreflang(default, never):String;
+  @:optional var media(default, never):String;
+  @:optional var sizes(default, never):String;
+  @:optional var type(default, never):String;
+}
+
+@:enum abstract LinkRel(String) to String from String {
+  var Alternate = "alternate";
+  var Author = "author";
+  var DnsPrefetch = "dns-prefetch";
+  var Help = "help";
+  var Icon = "icon";
+  var License = "license";
+  var Next = "next";
+  var Pingback = "pingback";
+  var Preconnect = "preconnect";
+  var Prefetch = "prefetch";
+  var Preload = "preload";
+  var Prerender = "prerender";
+  var Prev = "prev";
+  var Search = "search";
+  var Stylesheet = "stylesheet";
+}
+
+@:enum abstract LinkCrossOrigin(String) to String from String {
+  var Anonymous = "anonymous";
+  var UseCredentials = "use-credentials";
+}
+
 typedef ScriptAttr = {>GlobalAttr<Style>,
   @:optional var async(default, never):Bool;
   @:optional var charset(default, never):String;
