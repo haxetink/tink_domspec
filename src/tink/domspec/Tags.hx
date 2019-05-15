@@ -4,10 +4,15 @@ import tink.domspec.Attributes;
 
 typedef Tags = {
   var normal:{  
+    var html:GlobalAttr<Style>;
+    var body:GlobalAttr<Style>;
     var iframe:IFrameAttr;
     var object:ObjectAttr;
+    var head:GlobalAttr<Style>;
+    var title:GlobalAttr<Style>;
     var div:GlobalAttr<Style>;
     var aside:GlobalAttr<Style>;
+    var article:GlobalAttr<Style>;
     var section:GlobalAttr<Style>;
     var header:GlobalAttr<Style>;
     var footer:GlobalAttr<Style>;
@@ -75,8 +80,8 @@ typedef Tags = {
     var hr:GlobalAttr<Style>;
     var img:ImageAttr;
     var input:InputAttr;
-    // var link:GlobalAttr<Style>; //have to actually read the spec
-    // var meta:GlobalAttr<Style>; //have to actually read the spec
+    var link:LinkAttr; 
+    var meta:MetaAttr;
     var param:ParamAttr;
     var source:SourceAttr;
     var track:TrackAttr;
