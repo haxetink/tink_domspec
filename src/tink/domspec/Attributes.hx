@@ -174,7 +174,7 @@ typedef OptionAttr = {>GlobalAttr<Style>,
   @:optional var index(default, never):Int;
 }
 
-typedef MetaAttr = {> GlobalAttr<Style>,
+typedef MetaAttr = {>GlobalAttr<Style>,
   @:optional var content(default, never):String;
   @:optional var name(default, never):String;
   @:optional var charset(default, never):String;
