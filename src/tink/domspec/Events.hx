@@ -36,6 +36,10 @@ typedef Events<Target:DOMElement> = {
   @:optional var oninput:Callback<EventFrom<Target, Event>>;
   @:optional var oninvalid:Callback<EventFrom<Target, Event>>;
   
+  @:optional var oncompositionstart:Callback<EventFrom<Target, Event>>;
+  @:optional var oncompositionupdate:Callback<EventFrom<Target, Event>>;
+  @:optional var oncompositionend:Callback<EventFrom<Target, Event>>;
+  
   @:optional var onkeydown:Callback<EventFrom<Target, KeyboardEvent>>;
   @:optional var onkeypress:Callback<EventFrom<Target, KeyboardEvent>>;
   @:optional var onkeyup:Callback<EventFrom<Target, KeyboardEvent>>;
