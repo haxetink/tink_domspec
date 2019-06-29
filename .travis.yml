@@ -17,6 +17,7 @@ os:
   # - osx
 
 env:
+
   - HAXE_VERSION=3.4.7
   - HAXE_VERSION=latest
   
@@ -38,7 +39,7 @@ script:
     #     - lix download
     #   script: skip
     #   env:
-    #     secure: xxxxx
+    #  - secure: "I3LMvpBPnBhewTajXBnzWBRk12aJJupaQt1USQsGiKI9/3JOwAlBo749q613oqJAqcYNW2h7lFLz85LhWQ9LuuYGWFmrxvImdaFshNOtT37LtqvnnAzAJzlnAMiOMErN3HKVPTdsK2lNWrcmNQ3r9iJFvH1WfweH+g5hDIR1HuXn9cWBF0pz7QdhWRSOW2HIGsUuZt21DK9s1Rl5uHVVIOt1sZosAs1lbLQ/pjl/EBQEO2B34Pn/Sf9Ak2Q39UO/IBdtb9jkL7luP+T+9ukuUx97lwsFa8COGnWu4gTq5FsCVA1UIuQz68fsDv07rdg9FRAxisEuN90dbF/ZPrvzXlFhliXTbcgKCMR1xS3B+10Det1OTFhMD3fL0BzqEX8G/irrjk/GROLcvc/AKLxzIvJ2yHrFGGjthTBGTCd7D7G179xAIwgb/pmfnWye6URUt/x5B+gui1obg+kyDMKxyAjX8IdZ7XaldpSiAEV7Wu7U53KZ8xR+YhTznO2ovJTyadRs9fIrauyvzQMkuu+vWD1y+ns54WKUC0evinD9iGBGuTZqu/PhZoKLoTpj2jj+KJZJ+5iRZQgFx1u4yqZROEdpTJmUhrs+1VsonfJWkhV5ABNbtDhTVgbBYapRl468vs/sMsilkCJpNQ6IUtdxo79zsX7HT/xtpYfL+l7GOJQ="
     #   after_success:
     #     - lix run travix install
     #     - lix run travix release
