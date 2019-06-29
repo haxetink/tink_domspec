@@ -1,0 +1,5 @@
+tests.hxml
+-lib tink_domspec
+-lib travix
+-js out.js
+--no-output
