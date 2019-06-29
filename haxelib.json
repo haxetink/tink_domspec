@@ -1,21 +1,21 @@
 {
 	"name": "tink_domspec",
-	"classPath": "src",
-	"dependencies": {
-		"tink_macro": "",
-		"tink_svgspec": ""
-	},
-	"url": "https://github.com/haxetink/tink_domspec/",
-	"contributors": [
-		"back2dos"
-	],
-	"version": "0.1.4",
-	"releasenote": "Added dl, dt and dd.",
+	"license": "MIT",
 	"tags": [
 		"dom",
 		"html",
 		"html5",
 		"spec"
 	],
-	"license": "MIT"
+	"classPath": "src",
+	"contributors": [
+		"back2dos"
+	],
+	"releasenote": "Add initial svg support.",
+	"version": "0.1.5",
+	"url": "https://github.com/haxetink/tink_domspec/",
+	"dependencies": {
+		"tink_macro": "",
+		"tink_svgspec": ""
+	}
 }
