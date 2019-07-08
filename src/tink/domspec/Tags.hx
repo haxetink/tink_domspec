@@ -13,6 +13,7 @@ typedef Tags = {
     var div:GlobalAttr<Style>;
     var aside:GlobalAttr<Style>;
     var article:GlobalAttr<Style>;
+    var blockquote:GlobalAttr<Style>;
     var section:GlobalAttr<Style>;
     var header:GlobalAttr<Style>;
     var footer:GlobalAttr<Style>;
