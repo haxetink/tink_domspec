@@ -162,6 +162,7 @@ typedef AnchorAttr = {>GlobalAttr<Style>,
   @:optional var href(default, never):String;
   @:optional var target(default, never):String;
   @:optional var type(default, never):String;
+  @:optional var rel(default, never):AnchorRel;
 }
 
 typedef OptionAttr = {>GlobalAttr<Style>,
@@ -213,6 +214,22 @@ typedef LinkAttr = {>GlobalAttr<Style>,
   var Prev = "prev";
   var Search = "search";
   var Stylesheet = "stylesheet";
+}
+
+@:enum abstract AnchorRel(String) to String from String {
+  var Alternate = "alternate";
+  var Author = "author";
+  var Bookmark = "bookmark";
+  var External = "external";
+  var Help = "help";
+  var License = "license";
+  var Next = "next";
+  var NoFollow = "nofollow";
+  var NoReferrer = "noreferrer";
+  var NoOpener = "noopener";
+  var Prev = "prev";
+  var Search = "search";
+  var Tag = "tag";
 }
 
 @:enum abstract LinkCrossOrigin(String) to String from String {
