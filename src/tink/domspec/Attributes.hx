@@ -130,6 +130,7 @@ typedef VideoAttr = {>MediaAttr,
   @:optional var height(default, never):Int;
   @:optional var poster(default, never):String;
   @:optional var width(default, never):Int;
+  @:optional var playsInline(default, never):Bool;
 }
 
 typedef SourceAttr = {>GlobalAttr<Style>,
