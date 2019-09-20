@@ -111,6 +111,13 @@ typedef ImageAttr = {>GlobalAttr<Style>,
   @:optional var alt(default, never):String;
   @:optional var srcset(default, never):String;
   @:optional var sizes(default, never):String;
+  @:optional var loading(default, never):ImageLoading;
+}
+  
+@:enum abstract ImageLoading(String) {
+  var Lazy = "lazy";
+  var Eager = "eager";
+  var Auto = "auto";
 }
 
 private typedef MediaAttr = {>GlobalAttr<Style>,
