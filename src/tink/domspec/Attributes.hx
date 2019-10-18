@@ -7,7 +7,7 @@ typedef GlobalAttr<Style> = {
   @:optional var title(default, never):String;
   @:optional var lang(default, never):String;
   @:optional var dir(default, never):String;
-    
+
   @:optional var hidden(default, never):Bool;
   @:optional var tabIndex(default, never):Int;
   @:optional var accessKey(default, never):String;
@@ -16,19 +16,23 @@ typedef GlobalAttr<Style> = {
   @:optional var style(default, never):Style;
 }
 
-typedef FieldSetAttr = {>GlobalAttr<Style>, 
-  @:optional var disabled(default, never):Bool; 
-  @:optional var name(default, never):String; 
+typedef DetailsAttr = {>GlobalAttr<Style>,
+  @:optional var open(default, never):Bool;
 }
 
-typedef ObjectAttr = {>GlobalAttr<Style>, 
+typedef FieldSetAttr = {>GlobalAttr<Style>,
+  @:optional var disabled(default, never):Bool;
+  @:optional var name(default, never):String;
+}
+
+typedef ObjectAttr = {>GlobalAttr<Style>,
   @:optional var type(default, never):String;
   @:optional var data(default, never):String;
   @:optional var width(default, never):Int;
-  @:optional var height(default, never):Int;  
+  @:optional var height(default, never):Int;
 }
 
-typedef ParamAttr = {>GlobalAttr<Style>, 
+typedef ParamAttr = {>GlobalAttr<Style>,
   var name(default, never):String;
   var value(default, never):String;
 }
@@ -50,7 +54,7 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var autofocus(default, never):Bool;
   @:optional var autocomplete(default, never):String;
   @:optional var value(default, never):String;
-  @:optional var readOnly(default, never):Bool;  
+  @:optional var readOnly(default, never):Bool;
   @:html('value') @:optional var defaultValue(default, never):String;
   @:optional var type(default, never):String;
   @:optional var name(default, never):String;
@@ -89,11 +93,11 @@ typedef TextAreaAttr = {>GlobalAttr<Style>,
 }
 
 typedef IFrameAttr = {>GlobalAttr<Style>,
-  @:optional var sandbox(default, never):String; 
-  @:optional var width(default, never):Int; 
-  @:optional var height(default, never):Int; 
-  @:optional var src(default, never):String; 
-  @:optional var srcdoc(default, never):String; 
+  @:optional var sandbox(default, never):String;
+  @:optional var width(default, never):Int;
+  @:optional var height(default, never):Int;
+  @:optional var src(default, never):String;
+  @:optional var srcdoc(default, never):String;
   @:optional var allowFullscreen(default, never):Bool;
   @:deprecated @:optional var scrolling(default, never):IframeScrolling;
 }
@@ -120,9 +124,9 @@ private typedef MediaAttr = {>GlobalAttr<Style>,
   @:optional var loop(default, never):Bool;
   @:optional var muted(default, never):Bool;
   @:optional var preload(default, never):String;
-  @:optional var volume(default, never):Float;  
+  @:optional var volume(default, never):Float;
 }
-  
+
 typedef AudioAttr = {>MediaAttr,
 }
 
@@ -283,7 +287,7 @@ typedef EmbedAttr = {
 typedef SvgAttr = {>GlobalAttr<Style>,
   @:optional var width(default, never):String;
   @:optional var height(default, never):String;
-  @:optional var viewBox(default, never):String;// TODO: consider validating constant strings via typedef with @:fromHxx 
+  @:optional var viewBox(default, never):String;// TODO: consider validating constant strings via typedef with @:fromHxx
   @:optional var xmlns(default, never):String;// has no effect, but since most svgs come with this set, better to support it I guess
 }
 

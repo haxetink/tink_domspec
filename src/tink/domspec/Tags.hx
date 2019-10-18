@@ -3,7 +3,7 @@ package tink.domspec;
 import tink.domspec.Attributes;
 
 typedef Tags = {
-  var normal:{  
+  var normal:{
     var html:GlobalAttr<Style>;
     var body:GlobalAttr<Style>;
     var iframe:IFrameAttr;
@@ -60,6 +60,8 @@ typedef Tags = {
     var dl:GlobalAttr<Style>;
     var dt:GlobalAttr<Style>;
     var dd:GlobalAttr<Style>;
+    var details:#if haxe4 DetailsAttr #else GlobalAttr<Style>#end;
+    var summary:GlobalAttr<Style>;
     @:element(js.html.svg.SVGElement) var svg:SvgAttr;
     @:element(js.html.svg.PathElement) var path:PathAttr;
     @:element(js.html.svg.PolygonElement) var polygon:PolygonAttr;
@@ -81,7 +83,7 @@ typedef Tags = {
     var hr:GlobalAttr<Style>;
     var img:ImageAttr;
     var input:InputAttr;
-    var link:LinkAttr; 
+    var link:LinkAttr;
     var meta:MetaAttr;
     var param:ParamAttr;
     var source:SourceAttr;
