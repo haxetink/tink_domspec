@@ -7,6 +7,7 @@ typedef GlobalAttr<Style> = {
   @:optional var title(default, never):String;
   @:optional var lang(default, never):String;
   @:optional var dir(default, never):String;
+  @:optional var contentEditable(default, never):Bool;
 
   @:optional var hidden(default, never):Bool;
   @:optional var tabIndex(default, never):Int;
