@@ -16,6 +16,7 @@ typedef GlobalAttr<Style> = {
   @:optional var draggable(default, never):Bool;
   @:optional var spellcheck(default, never):Bool;
   @:optional var style(default, never):Style;
+  @:optional var role(default, never):String;
 }
 
 typedef DetailsAttr = {>GlobalAttr<Style>,
