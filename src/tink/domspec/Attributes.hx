@@ -16,7 +16,10 @@ typedef GlobalAttr<Style> = {
   @:optional var draggable(default, never):Bool;
   @:optional var spellcheck(default, never):Bool;
   @:optional var style(default, never):Style;
-  @:optional var role(def, never):String;
+  @:optional var role(default, never):String;
+  @:html('aria-hidden')     @:optional var ariaHidden(default, never):Bool;
+  @:html('aria-label')      @:optional var ariaLabel(default, never):String;
+  @:html('aria-labelledby') @:optional var ariaLabelledBy(default, never):String;
 }
 
 typedef DetailsAttr = {>GlobalAttr<Style>,
