@@ -11,6 +11,9 @@ abstract ClassName(String) to String {
       case [null, v] | [v, null]: v;
       case [a, b]: '$a $b';
     });
+    
+  public function when(cond:Bool):ClassName
+    return new ClassName(if(cond) this else '');
 
   @:from static function ofMap(parts:Map<String, Bool>)
     return new ClassName(ofArray([for (c in parts.keys()) if (parts[c]) ofString(c)]));
