@@ -56,7 +56,7 @@ typedef Tags = {
     var video:VideoAttr;
     var form:FormAttr;
     var fieldset:FieldSetAttr;
-    var legend:GlobalAttr;
+    var legend:GlobalAttr<Style>;
     var select:SelectAttr;
     var option:OptionAttr;
     var dl:GlobalAttr<Style>;
