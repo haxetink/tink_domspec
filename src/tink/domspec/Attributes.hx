@@ -113,6 +113,7 @@ typedef IFrameAttr = {>GlobalAttr<Style>,
   @:optional var src(default, never):String;
   @:optional var srcdoc(default, never):String;
   @:optional var allowFullscreen(default, never):Bool;
+  @:optional var loading(default, never):ImageLoading;
   @:deprecated @:optional var scrolling(default, never):IframeScrolling;
 }
 
@@ -129,6 +130,13 @@ typedef ImageAttr = {>GlobalAttr<Style>,
   @:optional var alt(default, never):String;
   @:optional var srcset(default, never):String;
   @:optional var sizes(default, never):String;
+  @:optional var loading(default, never):ImageLoading;
+}
+  
+@:enum abstract ImageLoading(String) from String to String {
+  var Lazy = "lazy";
+  var Eager = "eager";
+  var Auto = "auto";
 }
 
 private typedef MediaAttr = {>GlobalAttr<Style>,
