@@ -16,7 +16,7 @@ typedef GlobalAttr<Style> = {
   @:optional var draggable(default, never):Bool;
   @:optional var spellcheck(default, never):Bool;
   @:optional var style(default, never):Style;
-  @:optional var role(default, never):String;
+  @:optional var role(default, never):AriaRole;
 }
 
 typedef DetailsAttr = {>GlobalAttr<Style>,
@@ -238,6 +238,45 @@ typedef LinkAttr = {>GlobalAttr<Style>,
   var Prev = "prev";
   var Search = "search";
   var Tag = "tag";
+}
+
+@:enum abstract AriaRole(String) to String from String {
+  var Alert = "alert";
+  var Application = "application";
+  var Article = "article";
+  var Banner = "banner";
+  var Button = "button";
+  var Cell = "cell";
+  var Checkbox = "checkbox";
+  var Comment = "comment";
+  var Complementary = "complementary";
+  var Contentinfo = "contentinfo";
+  var Dialog = "dialog";
+  var Document = "document";
+  var Feed = "feed";
+  var Figure = "figure";
+  var Form = "form";
+  var Grid = "grid";
+  var Gridcell = "gridcell";
+  var Heading = "heading";
+  var Img = "img";
+  var List = "list";
+  var Listbox = "listbox";
+  var Listitem = "listitem";
+  var Main = "main";
+  var Mark = "mark";
+  var Navigation = "navigation";
+  var Region = "region";
+  var Row = "row";
+  var Rowgroup = "rowgroup";
+  var Search = "search";
+  var Suggestion = "suggestion";
+  var Switch = "switch";
+  var Tab = "tab";
+  var Table = "table";
+  var Tabpanel = "tabpanel";
+  var Textbox = "textbox";
+  var Timer = "timer";
 }
 
 @:enum abstract LinkCrossOrigin(String) to String from String {
