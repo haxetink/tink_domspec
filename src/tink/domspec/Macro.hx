@@ -1,6 +1,7 @@
 package tink.domspec;
 
 #if macro
+import haxe.macro.Context;
 import haxe.macro.Expr;
 import haxe.macro.Type;
 using tink.MacroApi;
@@ -17,10 +18,10 @@ class TagInfo {
   public var pos(default, null):Position;
   public var domCt(default, null):ComplexType;
   public var dom(get, null):Type;
-    function get_dom() 
+    function get_dom()
       return switch dom {
         case null:
-          dom = (macro @:pos(pos) (null:$domCt)).typeof().sure();    
+          dom = (macro @:pos(pos) (null:$domCt)).typeof().sure();
         case v: v;
       }
   public function new(args) {
@@ -32,16 +33,26 @@ class TagInfo {
 }
 
 class Macro {
+  static public function getAria()
+    return [for (f in Context.getType('tink.domspec.Aria').getFields().sure())
+      switch f.meta.extract(':html') {
+        case []: f.pos.error('missing @:html');
+        case [{ params: [{ expr: EConst(CString(s)) }]}]: { name: s, type: f.type };
+        case [v]: v.pos.error('invalid @:html');
+        case v: v[1].pos.error('invalid meta $v');
+      }
+    ];
+
   static public var tags(get, null):Map<String, TagInfo>;//TODO: make this readonly
   static function get_tags() {
     if (tags == null) {
       tags = new Map();
-      for (group in haxe.macro.Context.getType('tink.domspec.Tags').getFields().sure()) {
+      for (group in Context.getType('tink.domspec.Tags').getFields().sure()) {
         var kind:TagKind = cast group.name;
         for (f in group.type.getFields().sure()) {
           switch f.type {
-            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name}, params): 
-              var typeId = 
+            case TType(_.get() => { module: 'tink.domspec.Attributes', name: name}, params):
+              var typeId =
                 switch f.meta.extract(':element') {
                   case []:
                     'js.html.' + (switch name.split('Attr') {
@@ -54,7 +65,7 @@ class Macro {
                   case _:
                     f.pos.error('Only support single @:element meta with a single parameter');
                 }
-              
+
               tags[f.name] = new TagInfo({
                 kind: kind,
                 attr: 'tink.domspec.Attributes.$name'.asComplexType(params.map(function(type) return TPType(type.toComplex()))),
@@ -68,14 +79,14 @@ class Macro {
     }
     return tags;
   }
-  
-  static function processStyle(e:Expr):Expr 
+
+  static function processStyle(e:Expr):Expr
     return switch e {
       case macro @style $e: processStyle(e);
       case { expr: EObjectDecl(_) }: e;
-      default: 
+      default:
         switch e.typeof().sure() {
-          case TInst(_.get() => { pack: [], name: 'String' }, _): 
+          case TInst(_.get() => { pack: [], name: 'String' }, _):
             macro @:pos(e.pos) tink.domspec.Style.CSSParser.parseString($e);//TODO: try some compile time parsing
           default: e;
         }
