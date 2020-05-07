@@ -17,17 +17,6 @@ typedef GlobalAttr<Style> = {
   @:optional var spellcheck(default, never):Bool;
   @:optional var style(default, never):Style;
   @:optional var role(default, never):AriaRole;
-  
-  @:html('aria-label') @:optional var ariaLabel(default, never):String;
-  @:html('aria-labeledby') @:optional var ariaLabelledby(default, never):String;
-  @:html('aria-describedby') @:optional var ariaDescribedby(default, never):String;
-  @:html('aria-autocomplete') @:optional var ariaAutocomplete(default, never):String;
-  @:html('aria-dropeffect') @:optional var ariaDropEffect(default, never):String;
-  @:html('aria-hidden') @:optional var ariaHidden(default, never):String;
-  @:html('aria-disabled') @:optional var ariaDisabled(default, never):String;
-  @:html('aria-checked') @:optional var ariaChecked(default, never):String;
-  @:html('aria-haspopup') @:optional var ariaHasPopup(default, never):String;
-  @:html('aria-grabbed') @:optional var ariaGrabbed(default, never):String;
 }
 
 typedef DetailsAttr = {>GlobalAttr<Style>,
@@ -132,7 +121,7 @@ typedef ImageAttr = {>GlobalAttr<Style>,
   @:optional var sizes(default, never):String;
   @:optional var loading(default, never):ImageLoading;
 }
-  
+
 @:enum abstract ImageLoading(String) from String to String {
   var Lazy = "lazy";
   var Eager = "eager";
