@@ -1,14 +1,14 @@
 package tink.domspec;
 
 typedef Aria = {
-  @:optional var label(default, never):String;
-  @:optional var labelledby(default, never):String;
-  @:optional var describedby(default, never):String;
-  @:optional var autocomplete(default, never):String;
-  @:optional var dropeffect(default, never):String;
-  @:optional var hidden(default, never):Bool;
-  @:optional var disabled(default, never):Bool;
-  @:optional var checked(default, never):Bool;
-  @:optional var haspopup(default, never):Bool;
-  @:optional var grabbed(default, never):Bool;
+  @:html('aria-label') @:optional var ariaLabel(default, never):String;
+  @:html('aria-labeledby') @:optional var ariaLabelledby(default, never):String;
+  @:html('aria-describedby') @:optional var ariaDescribedby(default, never):String;
+  @:html('aria-autocomplete') @:optional var ariaAutocomplete(default, never):String;
+  @:html('aria-dropeffect') @:optional var ariaDropEffect(default, never):String;
+  @:html('aria-hidden') @:optional var ariaHidden(default, never):Bool;
+  @:html('aria-disabled') @:optional var ariaDisabled(default, never):Bool;
+  @:html('aria-checked') @:optional var ariaChecked(default, never):Bool;
+  @:html('aria-haspopup') @:optional var ariaHasPopup(default, never):Bool;
+  @:html('aria-grabbed') @:optional var ariaGrabbed(default, never):Bool;
 }
