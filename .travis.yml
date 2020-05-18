@@ -29,7 +29,7 @@ script:
 
 jobs:
   include:
-    # - stage: test # should uncomment this when there is no matrix above (e.g. only one os, one env, etc)
+    - stage: test # should uncomment this when there is no matrix above (e.g. only one os, one env, etc)
     - stage: deploy
       os: linux
       install:
