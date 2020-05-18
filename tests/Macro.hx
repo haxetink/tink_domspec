@@ -20,7 +20,7 @@ class Macro {
           var checks = 
             [for(field in fields) {
               var pos = field.pos.toLocation();
-              if(!field.meta.has(':global')) 
+              // if(!field.meta.has(':global')) 
                 macro if(!js.Syntax.code('({0} in {1})', $v{field.name}, element)) js.Browser.console.log($v{pos.file.toString()} + ':' + $v{pos.range.start.line} + ': Warning - Potentially incorrect field: ' + $v{tag} + '#' + $v{field.name});
             }];
         
