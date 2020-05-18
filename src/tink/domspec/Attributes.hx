@@ -2,21 +2,20 @@ package tink.domspec;
 
 import tink.domspec.Style;
 typedef GlobalAttr<Style> = {
-  @:html('class') @:optional var className(default, never):ClassName;
-  @:optional var id(default, never):String;
-  @:optional var title(default, never):String;
-  @:optional var lang(default, never):String;
-  @:optional var dir(default, never):String;
-  @:optional var contentEditable(default, never):Bool;
-  @:optional var inputmode(default, never):Bool;
-
-  @:optional var hidden(default, never):Bool;
-  @:optional var tabIndex(default, never):Int;
-  @:optional var accessKey(default, never):String;
-  @:optional var draggable(default, never):Bool;
-  @:optional var spellcheck(default, never):Bool;
-  @:optional var style(default, never):Style;
-  @:optional var role(default, never):AriaRole;
+  @:global @:html('class') @:optional var className(default, never):ClassName;
+  @:global @:optional var id(default, never):String;
+  @:global @:optional var title(default, never):String;
+  @:global @:optional var lang(default, never):String;
+  @:global @:optional var dir(default, never):String;
+  @:global @:optional var contentEditable(default, never):Bool;
+  @:global @:optional var inputmode(default, never):Bool;
+  @:global @:optional var hidden(default, never):Bool;
+  @:global @:optional var tabIndex(default, never):Int;
+  @:global @:optional var accessKey(default, never):String;
+  @:global @:optional var draggable(default, never):Bool;
+  @:global @:optional var spellcheck(default, never):Bool;
+  @:global @:optional var style(default, never):Style;
+  @:global @:optional var role(default, never):AriaRole;
 }
 
 typedef DetailsAttr = {>GlobalAttr<Style>,
@@ -47,7 +46,6 @@ typedef TableCellAttr = {>GlobalAttr<Style>,
   @:optional var headers(default, never):String;
   @:optional var rowSpan(default, never):Int;
   @:optional var scope(default, never):String;
-  @:optional var sorted(default, never):String;
 }
 
 typedef InputAttr = {>GlobalAttr<Style>,
@@ -81,10 +79,10 @@ typedef ButtonAttr = {>GlobalAttr<Style>,
 typedef TextAreaAttr = {>GlobalAttr<Style>,
   @:optional var autofocus(default, never):Bool;
   @:optional var cols(default, never):Int;
-  @:optional var dirname(default, never):String;
+  @:optional var dirName(default, never):String;
   @:optional var disabled(default, never):Bool;
   @:optional var form(default, never):String;
-  @:optional var maxlength(default, never):Int;
+  @:optional var maxLength(default, never):Int;
   @:optional var name(default, never):String;
   @:optional var placeholder(default, never):String;
   @:optional var readOnly(default, never):Bool;
@@ -96,13 +94,17 @@ typedef TextAreaAttr = {>GlobalAttr<Style>,
 }
 
 typedef IFrameAttr = {>GlobalAttr<Style>,
-  @:optional var sandbox(default, never):String;
-  @:optional var width(default, never):Int;
+  @:optional var allow(default, never):String;
+  @:optional var allowFullscreen(default, never):Bool;
+  @:optional var allowPaymentRequest(default, never):Bool;
   @:optional var height(default, never):Int;
+  @:optional var name(default, never):String;
+  @:optional var referrerPolicy(default, never):String;
+  @:optional var sandbox(default, never):String;
   @:optional var src(default, never):String;
   @:optional var srcdoc(default, never):String;
-  @:optional var allowFullscreen(default, never):Bool;
   @:optional var loading(default, never):ImageLoading;
+  @:optional var width(default, never):Int;
   @:deprecated @:optional var scrolling(default, never):IframeScrolling;
 }
 
@@ -206,7 +208,7 @@ typedef MetaAttr = {>GlobalAttr<Style>,
 
 typedef LinkAttr = {>GlobalAttr<Style>,
   var rel(default, never):LinkRel;
-  @:optional var crossorigin(default, never):LinkCrossOrigin;
+  @:optional var crossOrigin(default, never):LinkCrossOrigin;
   @:optional var href(default, never):String;
   @:optional var hreflang(default, never):String;
   @:optional var media(default, never):String;
@@ -330,7 +332,7 @@ typedef EmbedAttr = {
   var height(default, never):Int;
   var width(default, never):Int;
   var src(default, never):String;
-  var typed(default, never):String;
+  var type(default, never):String;
 }
 
 // svg attr reference: https://github.com/dumistoklus/svg-xsd-schema/blob/master/svg.xsd

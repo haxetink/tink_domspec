@@ -1,2 +1,3 @@
 -D travix=dev
 -cp src
+-lib tink_svgspec
