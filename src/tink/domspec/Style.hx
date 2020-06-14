@@ -343,8 +343,10 @@ typedef SvgStyle = tink.svgspec.PresentationAttributes; // TODO: is this correct
 
 class CSSParser {
   #if js
-  static var style = js.Browser.document.createElement('div').style;
+  static var style = null;
   static public function parseString(s:String):Style {
+    if (style == null)
+      style = js.Browser.document.createElement('div').style;
     style.cssText = s;
     var ret:Style = {};
     {
@@ -352,12 +354,12 @@ class CSSParser {
       for (name in style) {
         ret[name] = style.getPropertyValue(name);
       }
-    }  
+    }
     return ret;
   }
   #else
   @:require(js)
-  static public function parseString(s:String):Style 
+  static public function parseString(s:String):Style
     return {};
   #end
 }
