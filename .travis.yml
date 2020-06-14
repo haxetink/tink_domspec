@@ -18,14 +18,16 @@ os:
 
 env:
   - HAXE_VERSION=stable
-  
+
 install:
   - npm i -g lix
   - lix install haxe $HAXE_VERSION
   - lix download
-  
+
 script:
-  - lix run travix js
+  - lix travix node
+  - lix travix js
+  - lix travix neko
 
 jobs:
   include:
