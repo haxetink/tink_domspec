@@ -1,6 +1,7 @@
 package tink.domspec;
 
 import tink.domspec.Style;
+
 typedef GlobalAttr<Style> = {
   @:global @:html('class') @:optional var className(default, never):ClassName;
   @:global @:optional var id(default, never):String;
@@ -360,7 +361,9 @@ typedef EmbedAttr = {
 }
 
 // svg attr reference: https://github.com/dumistoklus/svg-xsd-schema/blob/master/svg.xsd
-typedef SvgAttr = {>GlobalAttr<Style>,
+typedef SvgAttr = {
+  >GlobalAttr<Style>,
+  >tink.svgspec.PresentationAttributes,
   @:optional var width(default, never):String;
   @:optional var height(default, never):String;
   @:optional var viewBox(default, never):String;// TODO: consider validating constant strings via typedef with @:fromHxx
