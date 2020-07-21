@@ -70,6 +70,7 @@ typedef Tags = {
     @:element(js.html.svg.CircleElement) var circle:CircleAttr;
     @:element(js.html.svg.RectElement) var rect:RectAttr;
     @:element(js.html.svg.EllipseElement) var ellipse:EllipseAttr;
+    @:element(js.html.svg.UseElement) var use:UseAttr;
   }
   var opaque:{
     var textarea:TextAreaAttr;//right?

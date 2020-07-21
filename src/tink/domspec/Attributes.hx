@@ -388,3 +388,8 @@ typedef EllipseAttr = {
   > GlobalAttr<SvgStyle>,
   > tink.svgspec.Attributes.EllipseAttr,
 }
+
+typedef UseAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.UseAttr,
+}
