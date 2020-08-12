@@ -53,7 +53,7 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var disabled(default, never):Bool;
   @:optional var required(default, never):Bool;
   @:optional var autofocus(default, never):Bool;
-  @:optional var autocomplete(default, never):String;
+  @:optional var autocomplete(default, never):InputAutocomplete;
   @:optional var value(default, never):String;
   @:optional var readOnly(default, never):Bool;
   @:html('value') @:optional var defaultValue(default, never):String;
@@ -67,6 +67,11 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var pattern(default, never):String;
   @:optional var accept(default, never):String;
   @:optional var multiple(default, never):Bool;
+}
+
+@:enum abstract InputAutocomplete(String) to String from String {
+  var Off = "off";
+  var On = "on";
 }
 
 typedef ButtonAttr = {>GlobalAttr<Style>,
@@ -172,8 +177,27 @@ typedef SelectAttr = {>GlobalAttr<Style>,
 }
 
 typedef FormAttr = {>GlobalAttr<Style>,
-  @:optional var method(default, never):String;
+  @:optional var method(default, never):FormMethod;
   @:optional var action(default, never):String;
+  @:html('accept-charset') @:optional var acceptCharset(default, never):String;
+  @:optional var autocomplete(default, never):InputAutocomplete;
+  @:optional var encoding(default, never):FormEncoding;
+  @:optional var enctype(default, never):FormEncoding;
+  @:optional var name(default, never):String;
+  @:optional var noValidate(default, never):Bool;
+  @:optional var target(default, never):String;
+}
+
+@:enum abstract FormEncoding(String) from String to String {
+  var FormData = "multipart/form-data";
+  var PlainText = "text/plain";
+  var UrlEncoded = "application/x-www-form-urlencoded";
+}
+
+@:enum abstract FormMethod(String) from String to String {
+  var Dialog = "dialog";
+  var Get = "get";
+  var Post = "post";
 }
 
 typedef AnchorAttr = {>GlobalAttr<Style>,
