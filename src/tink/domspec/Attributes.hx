@@ -371,6 +371,11 @@ typedef PathAttr = {
   > GlobalAttr<SvgStyle>,
   > tink.svgspec.Attributes.PathAttr,
 }
+
+typedef PolylineAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.PolygonAttr,
+}
 typedef PolygonAttr = {
   > GlobalAttr<SvgStyle>,
   > tink.svgspec.Attributes.PolygonAttr,

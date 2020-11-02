@@ -65,6 +65,7 @@ typedef Tags = {
     var details:#if haxe4 DetailsAttr #else GlobalAttr<Style>#end;
     var summary:GlobalAttr<Style>;
     @:element(js.html.svg.SVGElement) var svg:SvgAttr;
+    @:element(js.html.svg.PolylineElement) var polyline:PolylineAttr;
     @:element(js.html.svg.PathElement) var path:PathAttr;
     @:element(js.html.svg.PolygonElement) var polygon:PolygonAttr;
     @:element(js.html.svg.CircleElement) var circle:CircleAttr;
