@@ -27,6 +27,16 @@ typedef FieldSetAttr = {>GlobalAttr<Style>,
   @:optional var name(default, never):String;
 }
 
+typedef TimeAttr = {>GlobalAttr<Style>,
+  @:optional var datetime:DateTime;
+}
+
+abstract DateTime(String) {
+  inline function new(v) this = v;
+  @:from static function ofDate(d:Date)
+    return new DateTime(d.toString());
+}
+
 typedef ObjectAttr = {>GlobalAttr<Style>,
   @:optional var type(default, never):String;
   @:optional var data(default, never):String;

@@ -9,6 +9,7 @@ typedef Tags = {
     var iframe:IFrameAttr;
     var object:ObjectAttr;
     var head:GlobalAttr<Style>;
+    var time:TimeAttr;
     var title:GlobalAttr<Style>;
     var div:GlobalAttr<Style>;
     var code:GlobalAttr<Style>;
