@@ -344,6 +344,19 @@ typedef SvgStyle = tink.svgspec.PresentationAttributes; // TODO: is this correct
 class CSSParser {
   #if js
   static var style = null;
+  static var names = new Map();
+  static function kebabToLower(name:String)
+    return switch names[name] {
+      case null:
+        names[name] = [
+          for (i => part in name.split('-'))
+            if (i == 0) part
+            else part.charAt(0).toUpperCase() + part.substr(1)
+        ].join('');
+      case v: v;
+    }
+
+  @:deprecated('Supplying styles as string yields poor performance. Use objects instead, e.g. { backgroundColor: "red" }')
   static public function parseString(s:String):Style {
     if (style == null)
       style = js.Browser.document.createElement('div').style;
@@ -351,8 +364,9 @@ class CSSParser {
     var ret:Style = {};
     {
       var ret:haxe.DynamicAccess<String> = ret;
-      for (name in style) {
-        ret[name] = style.getPropertyValue(name);
+      for (index in 0...style.length) {
+        var name = style.item(index);
+        ret[kebabToLower(name)] = style.getPropertyValue(name);
       }
     }
     return ret;
