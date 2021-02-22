@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.3.0",
-	"releasenote": "Added ARIA and img.loading. Various other fixes.",
+	"version": "0.3.1",
+	"releasenote": "Haxe 4.2 support. Improvements for forms and inputs. Add sub, sup, time.",
 	"tags": [
 		"dom",
 		"html",
