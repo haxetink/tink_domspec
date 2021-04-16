@@ -6,9 +6,9 @@ package tink.domspec;
 typedef Style = {
   @:optional var alignContent(default, never):String;
   @:optional var alignItems(default, never):String;
-  @:optional var alignSelf(default, never):String;
   @:optional var alignmentAdjust(default, never):String;
   @:optional var alignmentBaseline(default, never):String;
+  @:optional var alignSelf(default, never):String;
   @:optional var all(default, never):String;
   @:optional var anchorPoint(default, never):String;
   @:optional var animation(default, never):String;
@@ -94,9 +94,9 @@ typedef Style = {
   @:optional var columnRuleColor(default, never):String;
   @:optional var columnRuleStyle(default, never):String;
   @:optional var columnRuleWidth(default, never):String;
+  @:optional var columns(default, never):String;
   @:optional var columnSpan(default, never):String;
   @:optional var columnWidth(default, never):String;
-  @:optional var columns(default, never):String;
   @:optional var contain(default, never):String;
   @:optional var content(default, never):String;
   @:optional var counterIncrement(default, never):String;
@@ -140,6 +140,7 @@ typedef Style = {
   @:optional var fontStyle(default, never):String;
   @:optional var fontVariantPosition(default, never):String;
   @:optional var fontWeight(default, never):String;
+  @:optional var gap(default, never):String;
   @:optional var grid(default, never):String;
   @:optional var gridArea(default, never):String;
   @:optional var gridAutoColumns(default, never):String;
@@ -147,9 +148,12 @@ typedef Style = {
   @:optional var gridAutoRows(default, never):String;
   @:optional var gridColumn(default, never):String;
   @:optional var gridColumnEnd(default, never):String;
+  @:optional var gridColumnGap(default, never):String;
   @:optional var gridColumnStart(default, never):String;
+  @:optional var gridGap(default, never):String;
   @:optional var gridRow(default, never):String;
   @:optional var gridRowEnd(default, never):String;
+  @:optional var gridRowGap(default, never):String;
   @:optional var gridRowStart(default, never):String;
   @:optional var gridTemplate(default, never):String;
   @:optional var gridTemplateAreas(default, never):String;
@@ -262,12 +266,13 @@ typedef Style = {
   @:optional var right(default, never):String;
   @:optional var rotation(default, never):String;
   @:optional var rotationPoint(default, never):String;
+  @:optional var rowGap(default, never):String;
   @:optional var rubyAlign(default, never):String;
   @:optional var rubyMerge(default, never):String;
   @:optional var rubyPosition(default, never):String;
   @:optional var shapeImageThreshold(default, never):String;
-  @:optional var shapeOutside(default, never):String;
   @:optional var shapeMargin(default, never):String;
+  @:optional var shapeOutside(default, never):String;
   @:optional var size(default, never):String;
   @:optional var speak(default, never):String;
   @:optional var speakAs(default, never):String;
@@ -277,8 +282,8 @@ typedef Style = {
   @:optional var speechRate(default, never):String;
   @:optional var stress(default, never):String;
   @:optional var stringSet(default, never):String;
-  @:optional var tabSize(default, never):String;
   @:optional var tableLayout(default, never):String;
+  @:optional var tabSize(default, never):String;
   @:optional var textAlign(default, never):String;
   @:optional var textAlignLast(default, never):String;
   @:optional var textCombineUpright(default, never):String;
