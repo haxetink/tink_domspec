@@ -214,9 +214,16 @@ typedef FormAttr = {>GlobalAttr<Style>,
 
 typedef AnchorAttr = {>GlobalAttr<Style>,
   @:optional var href(default, never):String;
-  @:optional var target(default, never):String;
+  @:optional var target(default, never):AnchorTarget;
   @:optional var type(default, never):String;
   @:optional var rel(default, never):AnchorRel;
+}
+
+@:enum abstract AnchorTarget(String) to String from String {
+  var Blank = "_blank";
+  var Parent = "_parent";
+  var Self = "_self";
+  var Top = "_top";
 }
 
 typedef OptionAttr = {>GlobalAttr<Style>,
