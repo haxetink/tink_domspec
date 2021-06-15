@@ -67,6 +67,7 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var value(default, never):String;
   @:optional var readOnly(default, never):Bool;
   @:html('value') @:optional var defaultValue(default, never):String;
+  @:html('checked') @:optional var defaultChecked(default, never):String;
   @:optional var type(default, never):String;
   @:optional var name(default, never):String;
   @:optional var placeholder(default, never):String;
