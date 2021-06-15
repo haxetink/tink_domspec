@@ -60,6 +60,7 @@ typedef TableCellAttr = {>GlobalAttr<Style>,
 
 typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var checked(default, never):Bool;
+  @:html('checked') @:optional var defaultChecked(default, never):Bool;
   @:optional var disabled(default, never):Bool;
   @:optional var required(default, never):Bool;
   @:optional var autofocus(default, never):Bool;
