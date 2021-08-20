@@ -75,6 +75,7 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var min(default, never):String;
   @:optional var step(default, never):String;
   @:optional var maxLength(default, never):Int;
+  @:optional var minLength(default, never):Int;
   @:optional var pattern(default, never):String;
   @:optional var accept(default, never):String;
   @:optional var multiple(default, never):Bool;
@@ -101,6 +102,7 @@ typedef TextAreaAttr = {>GlobalAttr<Style>,
   @:optional var disabled(default, never):Bool;
   @:optional var form(default, never):String;
   @:optional var maxLength(default, never):Int;
+  @:optional var minLength(default, never):Int;
   @:optional var name(default, never):String;
   @:optional var placeholder(default, never):String;
   @:optional var readOnly(default, never):Bool;
