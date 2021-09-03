@@ -28,10 +28,10 @@ typedef FieldSetAttr = {>GlobalAttr<Style>,
 }
 
 typedef TimeAttr = {>GlobalAttr<Style>,
-  @:optional var datetime:DateTime;
+  @:optional var dateTime:DateTime;
 }
 
-abstract DateTime(String) {
+abstract DateTime(String) from String {
   inline function new(v) this = v;
   @:from static function ofDate(d:Date)
     return new DateTime(d.toString());
