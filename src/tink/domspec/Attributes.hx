@@ -28,13 +28,19 @@ typedef FieldSetAttr = {>GlobalAttr<Style>,
 }
 
 typedef TimeAttr = {>GlobalAttr<Style>,
-  @:optional var datetime:DateTime;
+  @:optional var dateTime:DateTime;
 }
 
 abstract DateTime(String) {
   inline function new(v) this = v;
+
   @:from static function ofDate(d:Date)
     return new DateTime(d.toString());
+
+  @:from static function ofFloat(f:Float) {
+    final parts = DateTools.parse(f);
+    return new DateTime('P${parts.days}DT${parts.hours}H${parts.minutes}M${parts.seconds}S');
+  }
 }
 
 typedef ObjectAttr = {>GlobalAttr<Style>,
