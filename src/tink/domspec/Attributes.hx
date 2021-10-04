@@ -87,6 +87,7 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var multiple(default, never):Bool;
   @:optional var capture(default, never):String;
   @:optional var size(default, never):Int;
+  @:optional var list(default, never):String;
 }
 
 @:enum abstract InputAutocomplete(String) to String from String {
