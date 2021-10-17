@@ -60,6 +60,7 @@ typedef Tags = {
     var legend:GlobalAttr<Style>;
     var select:SelectAttr;
     var option:OptionAttr;
+    var datalist:GlobalAttr<Style>;
     var dl:GlobalAttr<Style>;
     var dt:GlobalAttr<Style>;
     var dd:GlobalAttr<Style>;
