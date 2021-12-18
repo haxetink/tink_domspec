@@ -28,5 +28,15 @@ abstract ClassName(String) to String {
   @:from static function ofDynamicAccess(parts:haxe.DynamicAccess<Bool>)
     return new ClassName(ofArray([for (c in parts.keys()) if (parts[c]) ofString(c)]));
 
-  //TODO: add macro @:from to avoid ofString overhead for constant strings
+  @:from macro static function ofExpr(e:Expr)
+    return switch e {
+      case macro $v{(s:String)}:
+        macro (cast $v{ofString(s)}:tink.domspec.ClassName);
+      default:
+        var t = Context.typeExpr(e);
+        if (t.t.unifiesWith(Context.getType('String')))
+          macro @:privateAccess tink.domspec.ClassName.ofString($e);
+        else
+          e.pos.error('${t.t.toString()} should be tink.domspec.ClassName');
+    }
 }
