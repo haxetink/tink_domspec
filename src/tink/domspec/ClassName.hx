@@ -22,6 +22,9 @@ abstract ClassName(String) to String {
   public function when(cond:Bool):ClassName
     return new ClassName(if(cond) this else '');
 
+  public function addWhen(that:ClassName, cond:Bool):ClassName
+    return add(that.when(cond)); 
+
   @:from static function ofMap(parts:Map<String, Bool>)
     return new ClassName(ofArray([for (c in parts.keys()) if (parts[c]) ofString(c)]));
 
