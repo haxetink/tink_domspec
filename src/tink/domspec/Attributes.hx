@@ -22,6 +22,10 @@ typedef DetailsAttr = {>GlobalAttr<Style>,
   @:optional var open(default, never):Bool;
 }
 
+typedef DialogAttr = {>GlobalAttr<Style>,
+  @:optional var open(default, never):Bool;
+}
+
 typedef FieldSetAttr = {>GlobalAttr<Style>,
   @:optional var disabled(default, never):Bool;
   @:optional var name(default, never):String;
