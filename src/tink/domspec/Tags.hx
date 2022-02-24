@@ -65,7 +65,7 @@ typedef Tags = {
     var dt:GlobalAttr<Style>;
     var dd:GlobalAttr<Style>;
     var details:#if haxe4 DetailsAttr #else GlobalAttr<Style>#end;
-    var dialog:DialogAttr;
+    #if (haxe_ver > 4.204) var dialog:DialogAttr; #end
     var summary:GlobalAttr<Style>;
     var sub:GlobalAttr<Style>;
     var sup:GlobalAttr<Style>;
