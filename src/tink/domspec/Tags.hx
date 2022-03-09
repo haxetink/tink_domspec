@@ -15,6 +15,7 @@ typedef Tags = {
     var code:GlobalAttr<Style>;
     var aside:GlobalAttr<Style>;
     var article:GlobalAttr<Style>;
+    var address:GlobalAttr<Style>;
     var blockquote:GlobalAttr<Style>;
     var section:GlobalAttr<Style>;
     var header:GlobalAttr<Style>;
