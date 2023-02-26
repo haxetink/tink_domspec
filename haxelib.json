@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.3.1",
-	"releasenote": "Haxe 4.2 support. Improvements for forms and inputs. Add sub, sup, time.",
+	"version": "0.4.0",
+	"releasenote": "Add `address`, `datalist`, `dialog`, `figcaption` and `figure`. Fix `time`. Improve `button` and `input`.",
 	"tags": [
 		"dom",
 		"html",
