@@ -17,9 +17,10 @@ jobs:
           - stable
           - nightly
         target:
-          - js
+          # - js
           - neko
           - node
+          - php
 
     steps:
     - name: Check out repo
