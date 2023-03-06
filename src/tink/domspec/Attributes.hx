@@ -228,6 +228,7 @@ typedef FormAttr = {>GlobalAttr<Style>,
 }
 
 typedef AnchorAttr = {>GlobalAttr<Style>,
+  @:optional var download(default, never):String;
   @:optional var href(default, never):String;
   @:optional var target(default, never):AnchorTarget;
   @:optional var type(default, never):String;
