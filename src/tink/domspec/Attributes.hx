@@ -1,6 +1,7 @@
 package tink.domspec;
 
 import tink.domspec.Style;
+
 typedef GlobalAttr<Style> = {
   @:global @:html('class') @:optional var className(default, never):ClassName;
   @:global @:optional var id(default, never):String;

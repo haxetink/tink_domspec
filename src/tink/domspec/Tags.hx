@@ -23,6 +23,7 @@ typedef Tags = {
     var main:GlobalAttr<Style>;
     var nav:GlobalAttr<Style>;
     var table:GlobalAttr<Style>;
+    var caption:GlobalAttr<Style>;
     var thead:GlobalAttr<Style>;
     var tbody:GlobalAttr<Style>;
     var tfoot:GlobalAttr<Style>;
