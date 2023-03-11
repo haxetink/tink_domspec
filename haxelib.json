@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.4.1",
-	"releasenote": "Add the `download` attribute to anchors.",
+	"version": "0.4.2",
+	"releasenote": "Add the `caption` tag.",
 	"tags": [
 		"dom",
 		"html",
