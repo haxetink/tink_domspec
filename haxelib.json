@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.4.2",
-	"releasenote": "Add the `caption` tag.",
+	"version": "0.4.3",
+	"releasenote": "Add the `data` tag.",
 	"tags": [
 		"dom",
 		"html",
