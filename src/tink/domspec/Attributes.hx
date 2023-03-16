@@ -19,6 +19,10 @@ typedef GlobalAttr<Style> = {
   @:global @:optional var role(default, never):AriaRole;
 }
 
+typedef DataAttr = {>GlobalAttr<Style>,
+  @:optional var value(default, never):String;
+}
+
 typedef DetailsAttr = {>GlobalAttr<Style>,
   @:optional var open(default, never):Bool;
 }
