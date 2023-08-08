@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.4.3",
-	"releasenote": "Add the `data` tag.",
+	"version": "0.4.4",
+	"releasenote": "Add the `optgroup` tag.",
 	"tags": [
 		"dom",
 		"html",
