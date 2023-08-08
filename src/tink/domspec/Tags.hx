@@ -61,6 +61,7 @@ typedef Tags = {
     var fieldset:FieldSetAttr;
     var legend:GlobalAttr<Style>;
     var select:SelectAttr;
+    var optgroup:OptGroupAttr;
     var option:OptionAttr;
     var data:DataAttr;
     var datalist:GlobalAttr<Style>;

@@ -257,6 +257,11 @@ typedef OptionAttr = {>GlobalAttr<Style>,
   @:optional var index(default, never):Int;
 }
 
+typedef OptGroupAttr = {>GlobalAttr<Style>,
+  @:optional var disabled:Bool;
+  @:optional var label(default, never):String;
+}
+
 typedef MetaAttr = {>GlobalAttr<Style>,
   @:optional var content(default, never):String;
   @:optional var name(default, never):String;
