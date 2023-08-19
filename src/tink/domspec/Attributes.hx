@@ -20,7 +20,7 @@ typedef GlobalAttr<Style> = {
 }
 
 typedef DataAttr = {>GlobalAttr<Style>,
-  @:optional var value(default, never):String;
+  var value(default, never):String;
 }
 
 typedef DetailsAttr = {>GlobalAttr<Style>,
