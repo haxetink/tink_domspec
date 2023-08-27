@@ -228,7 +228,7 @@ typedef FormAttr = {>GlobalAttr<Style>,
   @:optional var enctype(default, never):FormEncoding;
   @:optional var name(default, never):String;
   @:optional var noValidate(default, never):Bool;
-  @:optional var target(default, never):String;
+  @:optional var target(default, never):Target;
 }
 
 @:enum abstract FormEncoding(String) from String to String {
@@ -246,12 +246,12 @@ typedef FormAttr = {>GlobalAttr<Style>,
 typedef AnchorAttr = {>GlobalAttr<Style>,
   @:optional var download(default, never):String;
   @:optional var href(default, never):String;
-  @:optional var target(default, never):AnchorTarget;
+  @:optional var target(default, never):Target;
   @:optional var type(default, never):String;
   @:optional var rel(default, never):AnchorRel;
 }
 
-@:enum abstract AnchorTarget(String) to String from String {
+@:enum abstract Target(String) from String to String {
   var Blank = "_blank";
   var Parent = "_parent";
   var Self = "_self";
