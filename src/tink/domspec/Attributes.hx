@@ -99,7 +99,7 @@ typedef InputAttr = {>GlobalAttr<Style>,
   @:optional var list(default, never):String;
 }
 
-@:enum abstract InputAutocomplete(String) to String from String {
+@:enum abstract InputAutocomplete(String) from String to String {
   var Off = "off";
   var On = "on";
 }
@@ -280,7 +280,7 @@ typedef MetaAttr = {>GlobalAttr<Style>,
   @:optional var httpEquiv(default, never):MetaHttpEquiv;
 }
 
-@:enum abstract MetaHttpEquiv(String) to String from String {
+@:enum abstract MetaHttpEquiv(String) from String to String {
   var ContentType = "content-type";
   var DefaultStyle = "default-style";
   var Refresh = "refresh";
@@ -296,7 +296,7 @@ typedef LinkAttr = {>GlobalAttr<Style>,
   @:optional var type(default, never):String;
 }
 
-@:enum abstract LinkRel(String) to String from String {
+@:enum abstract LinkRel(String) from String to String {
   var Alternate = "alternate";
   var Author = "author";
   var DnsPrefetch = "dns-prefetch";
@@ -314,7 +314,7 @@ typedef LinkAttr = {>GlobalAttr<Style>,
   var Stylesheet = "stylesheet";
 }
 
-@:enum abstract AnchorRel(String) to String from String {
+@:enum abstract AnchorRel(String) from String to String {
   var Alternate = "alternate";
   var Author = "author";
   var Bookmark = "bookmark";
@@ -330,7 +330,7 @@ typedef LinkAttr = {>GlobalAttr<Style>,
   var Tag = "tag";
 }
 
-@:enum abstract AriaRole(String) to String from String {
+@:enum abstract AriaRole(String) from String to String {
   var Alert = "alert";
   var Application = "application";
   var Article = "article";
@@ -369,7 +369,7 @@ typedef LinkAttr = {>GlobalAttr<Style>,
   var Timer = "timer";
 }
 
-@:enum abstract LinkCrossOrigin(String) to String from String {
+@:enum abstract LinkCrossOrigin(String) from String to String {
   var Anonymous = "anonymous";
   var UseCredentials = "use-credentials";
 }
@@ -400,7 +400,7 @@ typedef TrackAttr = {
   @:optional var srclang(default, never):String;
 }
 
-@:enum abstract TrackKind(String) to String from String {
+@:enum abstract TrackKind(String) from String to String {
   var Subtitles = 'subtitles';
   var Captions = 'captions';
   var Descriptions = 'descriptions';
