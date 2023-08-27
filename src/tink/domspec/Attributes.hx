@@ -113,8 +113,14 @@ typedef ButtonAttr = {>GlobalAttr<Style>,
   @:optional var formNoValidate(default, never):Bool;
   @:optional var formTarget(default, never):Target;
   @:optional var value(default, never):String;
-  @:optional var type(default, never):String;
+  @:optional var type(default, never):ButtonType;
   @:optional var name(default, never):String;
+}
+
+@:enum abstract ButtonType(String) from String to String {
+  var Button = "button";
+  var Reset = "reset";
+  var Submit = "submit";
 }
 
 typedef TextAreaAttr = {>GlobalAttr<Style>,
