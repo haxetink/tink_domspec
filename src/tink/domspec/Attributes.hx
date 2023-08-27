@@ -107,6 +107,11 @@ typedef InputAttr = {>GlobalAttr<Style>,
 typedef ButtonAttr = {>GlobalAttr<Style>,
   @:optional var disabled(default, never):Bool;
   @:optional var autofocus(default, never):Bool;
+  @:optional var formAction(default, never):String;
+  @:optional var formEnctype(default, never):FormEncoding;
+  @:optional var formMethod(default, never):FormMethod;
+  @:optional var formNoValidate(default, never):Bool;
+  @:optional var formTarget(default, never):Target;
   @:optional var value(default, never):String;
   @:optional var type(default, never):String;
   @:optional var name(default, never):String;
