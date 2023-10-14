@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.5.0",
-	"releasenote": "Add form attributes to buttons, add the `ButtonType` enum, rename the `AnchorTarget` enum to `Target`.",
+	"version": "0.5.1",
+	"releasenote": "Add the `hgroup` tag.",
 	"tags": [
 		"dom",
 		"html",
