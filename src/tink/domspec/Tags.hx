@@ -37,6 +37,7 @@ typedef Tags = {
     var h4:GlobalAttr<Style>;
     var h5:GlobalAttr<Style>;
     var h6:GlobalAttr<Style>;
+    var hgroup:GlobalAttr<Style>;
     var strong:GlobalAttr<Style>;
     var em:GlobalAttr<Style>;
     var span:GlobalAttr<Style>;
