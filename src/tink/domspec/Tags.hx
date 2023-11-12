@@ -45,6 +45,7 @@ typedef Tags = {
     var p:GlobalAttr<Style>;
     var ins:GlobalAttr<Style>;
     var del:GlobalAttr<Style>;
+    var kbd:GlobalAttr<Style>;
     var i:GlobalAttr<Style>;
     var b:GlobalAttr<Style>;
     var small:GlobalAttr<Style>;
