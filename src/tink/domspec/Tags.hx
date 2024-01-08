@@ -75,6 +75,7 @@ typedef Tags = {
     var figcaption:GlobalAttr<Style>;
     var figure:GlobalAttr<Style>;
     var meter:MeterAttr;
+    var progress:ProgressAttr;
     var summary:GlobalAttr<Style>;
     var sub:GlobalAttr<Style>;
     var sup:GlobalAttr<Style>;

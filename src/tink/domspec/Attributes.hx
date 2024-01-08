@@ -425,6 +425,12 @@ typedef MeterAttr = {
   @:optional var value(default, never):Float;
 }
 
+typedef ProgressAttr = {
+  > GlobalAttr<SvgStyle>,
+  @:optional var max(default, never):Float;
+  @:optional var value(default, never):Float;
+}
+
 // svg attr reference: https://github.com/dumistoklus/svg-xsd-schema/blob/master/svg.xsd
 typedef SvgAttr = {>GlobalAttr<Style>,
   @:optional var width(default, never):String;
