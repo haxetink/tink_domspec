@@ -415,6 +415,16 @@ typedef EmbedAttr = {
   var type(default, never):String;
 }
 
+typedef MeterAttr = {
+  > GlobalAttr<SvgStyle>,
+  @:optional var high(default, never):Float;
+  @:optional var low(default, never):Float;
+  @:optional var max(default, never):Float;
+  @:optional var min(default, never):Float;
+  @:optional var optimum(default, never):Float;
+  @:optional var value(default, never):Float;
+}
+
 // svg attr reference: https://github.com/dumistoklus/svg-xsd-schema/blob/master/svg.xsd
 typedef SvgAttr = {>GlobalAttr<Style>,
   @:optional var width(default, never):String;
