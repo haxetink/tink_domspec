@@ -9,8 +9,8 @@
 	"contributors": [
 		"back2dos"
 	],
-	"version": "0.5.1",
-	"releasenote": "Add the `hgroup` tag.",
+	"version": "0.5.2",
+	"releasenote": "Add the `meter` and `progress` tags.",
 	"tags": [
 		"dom",
 		"html",
