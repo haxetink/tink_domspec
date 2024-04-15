@@ -21,6 +21,7 @@ typedef Style = {
   @:optional var animationPlayState(default, never):String;
   @:optional var animationTimingFunction(default, never):String;
   @:optional var azimuth(default, never):String;
+  @:optional var backdropFilter(default, never):String;
   @:optional var backfaceVisibility(default, never):String;
   @:optional var background(default, never):String;
   @:optional var backgroundAttachment(default, never):String;
