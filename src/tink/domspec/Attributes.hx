@@ -218,6 +218,9 @@ typedef SelectAttr = {>GlobalAttr<Style>,
   @:optional var name(default, never):String;
   @:optional var required(default, never):Bool;
   @:optional var size(default, never):Int;
+  // note: those are react-only
+  @:optional var value(default, never):String;
+  @:optional var defaultValue(default, never):String;
 }
 
 typedef FormAttr = {>GlobalAttr<Style>,
