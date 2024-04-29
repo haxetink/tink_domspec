@@ -433,7 +433,9 @@ typedef ProgressAttr = {
 }
 
 // svg attr reference: https://github.com/dumistoklus/svg-xsd-schema/blob/master/svg.xsd
-typedef SvgAttr = {>GlobalAttr<Style>,
+typedef SvgAttr = {
+  >GlobalAttr<Style>,
+  >tink.svgspec.PresentationAttributes,
   @:optional var width(default, never):String;
   @:optional var height(default, never):String;
   @:optional var viewBox(default, never):String;// TODO: consider validating constant strings via typedef with @:fromHxx
@@ -465,4 +467,9 @@ typedef CircleAttr = {
 typedef EllipseAttr = {
   > GlobalAttr<SvgStyle>,
   > tink.svgspec.Attributes.EllipseAttr,
+}
+
+typedef UseAttr = {
+  > GlobalAttr<SvgStyle>,
+  > tink.svgspec.Attributes.UseAttr,
 }
