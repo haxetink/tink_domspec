@@ -6,6 +6,7 @@ typedef Tags = {
   var normal:{
     var html:GlobalAttr<Style>;
     var body:GlobalAttr<Style>;
+    var noscript:GlobalAttr<Style>;
     var iframe:IFrameAttr;
     var object:ObjectAttr;
     var head:GlobalAttr<Style>;
