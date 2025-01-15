@@ -290,6 +290,7 @@ typedef MetaAttr = {>GlobalAttr<Style>,
 typedef LinkAttr = {>GlobalAttr<Style>,
   var rel(default, never):LinkRel;
   @:optional var crossOrigin(default, never):LinkCrossOrigin;
+  @:optional var as(default, never):String;
   @:optional var href(default, never):String;
   @:optional var hreflang(default, never):String;
   @:optional var media(default, never):String;
