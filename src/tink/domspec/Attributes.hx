@@ -437,6 +437,7 @@ typedef ProgressAttr = {
 typedef SvgAttr = {>GlobalAttr<Style>,
   @:optional var width(default, never):String;
   @:optional var height(default, never):String;
+  @:optional var preserveAspectRatio(default, never):String;
   @:optional var viewBox(default, never):String;// TODO: consider validating constant strings via typedef with @:fromHxx
   @:optional var xmlns(default, never):String;// has no effect, but since most svgs come with this set, better to support it I guess
 }
