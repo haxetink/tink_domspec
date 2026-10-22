@@ -1,10 +1,22 @@
 #if macro
+import haxe.macro.Context;
 import tink.domspec.Macro.tags;
+import tink.domspec.Macro.getAria;
 using tink.MacroApi;
 using haxe.macro.PositionTools;
 #end
 
 class Macro {
+  static public macro function checkAria() {
+    var names = [for (attr in getAria()) attr.name];
+    for (name in ['aria-expanded', 'aria-live', 'aria-pressed', 'aria-labelledby'])
+      if (names.indexOf(name) == -1)
+        Context.error('Missing ARIA attribute: $name', Context.currentPos());
+    if (names.indexOf('aria-labeledby') != -1)
+      Context.error('Misspelled ARIA attribute: aria-labeledby', Context.currentPos());
+    return macro {};
+  }
+
   static public macro function build() {
     var exprs = [];
     

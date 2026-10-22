@@ -4,6 +4,7 @@ package ;
 class RunTests {
 
   static function main() {
+    Macro.checkAria();
     #if (js && !nodejs)
       Macro.build();
       var s = tink.domspec.Style.CSSParser.parseString('background: blue');
