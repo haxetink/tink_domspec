@@ -8,7 +8,7 @@ on:
 jobs:
   test:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04 # Travix's PHP PPA supports Noble, not Resolute.
     continue-on-error: ${{ matrix.haxe-version == 'nightly' }}
 
     strategy:
@@ -96,4 +96,3 @@ jobs:
       run: lix run travix release
       env:
         HAXELIB_AUTH: ${{ secrets.HAXELIB_AUTH }}
-    
