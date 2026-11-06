@@ -15,8 +15,15 @@ typedef GlobalAttr<Style> = {
   @:global @:optional var accessKey(default, never):String;
   @:global @:optional var draggable(default, never):Bool;
   @:global @:optional var spellcheck(default, never):Bool;
+  @:global @:optional var translate(default, never):Translate;
   @:global @:optional var style(default, never):Style;
   @:global @:optional var role(default, never):AriaRole;
+}
+
+/** Whether page translators (Google, Microsoft, Safari) should translate the element's text. **/
+@:enum abstract Translate(String) from String to String {
+  var Yes = "yes";
+  var No = "no";
 }
 
 typedef DataAttr = {>GlobalAttr<Style>,
